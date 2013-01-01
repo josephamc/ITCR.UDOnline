@@ -40,14 +40,14 @@
         <p>Para todos los usuarios que deseen realizar la solicitud de alguna instalación administrada por la unidad deportiva del 
             ITCR, este sitio web brindará la oportunidad de realizar dichas solicitudes de una manera automática.</p>
          <ul>
-           <li><a href="#">Para realizar la solicitud basta con</a></li>
-           <li><a href="#">ingresar al menú de instalaciones</a></li>
-           <li><a href="#">seleccionar una instalacion y una</a></li>
+           <li>Para realizar la solicitud basta con</li>
+           <li>ingresar al menú de instalaciones</li>
+           <li>seleccionar una instalacion y una</li>
          </ul>
          <ul>
-           <li><a href="#">vez seleccionada la instalación</a></li>
-           <li><a href="#">seleccionar reservar, llenar el </a></li>
-           <li><a href="#">formulario y enviar la solicitud.</a></li>
+           <li>vez seleccionada la instalación</li>
+           <li>seleccionar reservar, llenar el </li>
+           <li>formulario y enviar la solicitud.</li>
          </ul>
        </div><!-- Content Panel -->
     <div id="foot">
