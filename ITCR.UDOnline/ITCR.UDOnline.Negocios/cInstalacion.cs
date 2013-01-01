@@ -66,13 +66,16 @@ namespace ITCR.UDOnline.Negocios
         public DataTable search(String p_palabra)
         {
             DataTable dtReturn = new DataTable("Instalaciones");
+            dtReturn.Columns.Add("Identificacion");
+            dtReturn.Columns.Add("Nombre");
+            dtReturn.Columns.Add("Descripcion");
             cUDGDFINSTALACIONNegocios cInstalaciones = new cUDGDFINSTALACIONNegocios(0, "", 0, "");
             DataTable dtBase = cInstalaciones.SeleccionarTodos();
         
             foreach (DataRow drRow in dtBase.Rows)
             {
-                if (this.Compute(drRow[2].ToString(), p_palabra) <= 2)
-                    dtReturn.Rows.Add(drRow);
+                if (this.Compute(drRow[1].ToString(), p_palabra) <= 2)
+                    dtReturn.Rows.Add(drRow[0].ToString(), drRow[1].ToString(), drRow[2].ToString());
             }
 
             return dtReturn;

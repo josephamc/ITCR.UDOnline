@@ -22,18 +22,20 @@
        </p>
         <h1 class="logo" style="position: relative"></h1>
         <ul>
-         <li><a href="Default.aspx">INICIO</a></li>
-         <li><a href="Solicitudes/frmMostrarInstalaciones.aspx?from=btn">INSTALACIONES</a></li>
+         <li><a href="../Default.aspx">INICIO</a></li>
+         <li><a href="../Solicitudes/frmMostrarInstalaciones.aspx?from=btn">INSTALACIONES</a></li>
          <!--<li><a href="Solicitudes/frmInstalacion.aspx">INSTALACIONES</a></li>-->
          <!--<li><a href="Solicitudes/frmSolicitud.aspx">INSTALACIONES</a></li>-->
-         <li><a href="Contact.aspx">CONTÁCTENOS</a></li>
+         <li><a href="../Contact.aspx">CONTÁCTENOS</a></li>
        </ul>
        </div>
       </div>
      </div>
-    <div id="content">
-        <div id="content_cen">
-      <div id="content_sup">
+   <div id="content_spc">
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            <!-- Contenido de las paginas web -->
+        </asp:ContentPlaceHolder>
+      </div><!-- Content Space -->
        <div id="ct_pan">
         <p>Para todos los usuarios que deseen realizar la solicitud de alguna instalación administrada por la unidad deportiva del 
             ITCR, este sitio web brindará la oportunidad de realizar dichas solicitudes de una manera automática.</p>
@@ -48,23 +50,15 @@
            <li><a href="#">formulario y enviar la solicitud.</a></li>
          </ul>
        </div><!-- Content Panel -->
-      </div><!-- Content Superior -->
-     </div><!-- Content Central -->
-    </div><!-- Content -->
-    <div id="content_spc">
-        <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            <!-- Contenido de las paginas web -->
-        </asp:ContentPlaceHolder>
-      </div><!-- Content Space -->
     <div id="foot">
      <div id="foot_cen">
      <h6><a href="Default.aspx"></a></h6>
      <ul style="position: relative">
-         <li><a href="Default.aspx">INICIO</a></li>
+         <li><a href="../Default.aspx">INICIO</a></li>
          <li class="space">|</li>
-         <li><a href="about.html">ACERCA DE</a></li>
+         <li><a href="../about.html">ACERCA DE</a></li>
          <li class="space">|</li>
-         <li><a class="active" href="Contact.aspx">CONTÁCTENOS</a></li>
+         <li><a class="active" href="../Contact.aspx">CONTÁCTENOS</a></li>
        </ul>
         <p>Unidad Deportiva Online © 2012</p>
      </div><!-- foot_cen end -->

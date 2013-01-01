@@ -61,7 +61,7 @@ namespace ITCR.UDOnline.Interfaz.Solicitudes
             //Nueva_Instalacion.Insertar();
             //idagregar = Int32.Parse(Nueva_Instalacion.ID_INSTALACION.ToString());
 
-            Response.Redirect("frmNotificacion.aspx?op=notCor", true);
+            Response.Redirect("/frmNotificacion.aspx?op=notCor", true);
         }
     }
 }
