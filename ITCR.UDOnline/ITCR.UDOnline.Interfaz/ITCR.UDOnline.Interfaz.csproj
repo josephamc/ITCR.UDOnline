@@ -146,6 +146,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Instalaciones\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Site.Master" />

@@ -16,7 +16,7 @@ namespace ITCR.UDOnline.Interfaz
 
         protected void btn_Search_Click(object sender, EventArgs e)
         {
-            // Carga todas las instalaciones de la base y busca la que se parezca
+            Response.Redirect("Solicitudes/frmMostrarInstalaciones.aspx?from=SEARCH-" + txt_search.Text, true);
         }
     }
 }

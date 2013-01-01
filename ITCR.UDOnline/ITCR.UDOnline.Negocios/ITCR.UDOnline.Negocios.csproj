@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cInstalacion.cs" />
     <Compile Include="ClasesNegocios\cUDGDFIMAGENNegocios.cs" />
     <Compile Include="ClasesNegocios\cUDGDFINSTALACIONNegocios.cs" />
     <Compile Include="ClasesNegocios\cUDGDFRESERVACIONNegocios.cs" />

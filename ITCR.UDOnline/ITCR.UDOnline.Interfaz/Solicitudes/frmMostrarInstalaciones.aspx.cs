@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using ITCR.UDSystem.Negocios;
 using System.Data;
+using ITCR.UDOnline.Negocios;
 
 namespace ITCR.UDOnline.Interfaz.Solicitudes
 {
@@ -15,8 +16,17 @@ namespace ITCR.UDOnline.Interfaz.Solicitudes
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            String stype = Request.QueryString["from"].ToString();
             Grid_Instalaciones2.RowEditing += GridView1_RowEditing;
-            DataTable tablaInstalacionesBase = instalacion.SeleccionarTodos();
+            DataTable tablaInstalacionesBase;
+            if(stype.Contains("SEARCH"))
+            {
+                String[] swords = stype.Split('-');
+                cInstalacion cInst = new cInstalacion();
+                tablaInstalacionesBase = cInst.search(swords[1]);
+            }
+            else
+               tablaInstalacionesBase = instalacion.SeleccionarTodos();
             DataTable tablaInstalaciones = new DataTable();
             tablaInstalaciones.Columns.Add("identificacion");
             tablaInstalaciones.Columns.Add("  Nombre Instalacion          ");

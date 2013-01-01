@@ -23,7 +23,7 @@
         <h1 class="logo" style="position: relative"></h1>
         <ul>
          <li><a href="Default.aspx">INICIO</a></li>
-         <li><a href="Solicitudes/frmMostrarInstalaciones.aspx">INSTALACIONES</a></li>
+         <li><a href="Solicitudes/frmMostrarInstalaciones.aspx?from=btn">INSTALACIONES</a></li>
          <!--<li><a href="Solicitudes/frmInstalacion.aspx">INSTALACIONES</a></li>-->
          <!--<li><a href="Solicitudes/frmSolicitud.aspx">INSTALACIONES</a></li>-->
          <li><a href="Contact.aspx">CONTÁCTENOS</a></li>
