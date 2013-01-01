@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITCR.UDOnline.Interfaz", "ITCR.UDOnline.Interfaz\ITCR.UDOnline.Interfaz.csproj", "{26FE2C59-DABD-4591-91AA-83EF8CBED49E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITCR.UDOnline.Datos", "ITCR.UDOnline.Datos\ITCR.UDOnline.Datos.csproj", "{1284B0AB-4B13-4A80-BA92-3488790864DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITCR.UDOnline.Negocios", "ITCR.UDOnline.Negocios\ITCR.UDOnline.Negocios.csproj", "{D261CA50-4DEA-465A-BE70-1F0E65373269}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{26FE2C59-DABD-4591-91AA-83EF8CBED49E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26FE2C59-DABD-4591-91AA-83EF8CBED49E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26FE2C59-DABD-4591-91AA-83EF8CBED49E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26FE2C59-DABD-4591-91AA-83EF8CBED49E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1284B0AB-4B13-4A80-BA92-3488790864DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1284B0AB-4B13-4A80-BA92-3488790864DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1284B0AB-4B13-4A80-BA92-3488790864DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1284B0AB-4B13-4A80-BA92-3488790864DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D261CA50-4DEA-465A-BE70-1F0E65373269}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D261CA50-4DEA-465A-BE70-1F0E65373269}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D261CA50-4DEA-465A-BE70-1F0E65373269}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D261CA50-4DEA-465A-BE70-1F0E65373269}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
