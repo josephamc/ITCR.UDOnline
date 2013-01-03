@@ -29,18 +29,18 @@ namespace ITCR.UDOnline.Interfaz.Solicitudes
 
                     txt_id.Text = instalacionBase.ID_INSTALACION.ToString();
                     txt_nombre2.Text = instalacionBase.NOM_INSTALACION.ToString();
-                    txt_descripcion2.Value = instalacionBase.DSC_INSTALACION.ToString();
+                    txt_descripcion22.Text = instalacionBase.DSC_INSTALACION.ToString();
                     txt_medidas2.Text = instalacionBase.DSC_MEDIDAS.ToString();
-                    txt_reglamento2.Value = instalacionBase.TXT_REGLAMENTO.ToString();
+                    txt_reglamento22.Text = instalacionBase.TXT_REGLAMENTO.ToString();
                     txt_costos2.Text = instalacionBase.TXT_COSTOALQUILER.ToString();
                     string comentarios = instalacionBase.TXT_COMENTARIO.ToString();
                     if (comentarios != null)
                     {
-                        txt_comentarios2.Value = comentarios;
+                        txt_comentarios22.Text = comentarios;
                     }
                     else
                     {
-                        txt_comentarios2.Value = "";
+                        txt_comentarios22.Text = "";
                     }
                 }
                 IDinstalacionPrevia = -1;

@@ -21,7 +21,7 @@
                 <td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                 <td><asp:Label ID="lb_nombre" runat="server" Text="Nombre de la Instalación:" 
                         style="font-weight: 700"></asp:Label></td>
-                         <td><asp:TextBox ID="txt_nombreInstalacion" runat="server"  readonly="true" Width="227px"></asp:TextBox> </td>
+                         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:TextBox ID="txt_nombreInstalacion" runat="server"  readonly="true" Width="227px"></asp:TextBox> </td>
                         
             </tr>
 
@@ -30,14 +30,13 @@
         <br />
         <table>
             <tr>
-                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
               
 
                 <td><table>
                     <tr>
                         <td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                         <td><asp:Label ID="lb_Fecha1" runat="server" Text="Fecha Inicio:" 
-                                style="font-weight: 700"></asp:Label></td>
+                                style="font-weight: 700"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
                         <td><asp:TextBox ID="txt_FechaInicio" runat="server" Width="227px"></asp:TextBox> </td>
                     </tr>
             
@@ -135,6 +134,7 @@
             
                         </asp:DropDownList></td>
                        
+                        <tr><td><br /></td></tr>
                     </tr>
                 </table>
                 
@@ -229,6 +229,10 @@
         
     </div>
 
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
     <asp:Button ID="boton_enviar_solicitud" runat="server" Text="Enviar Solicitud" 
-            onclick="boton_enviar_solicitud_Click" />
+            onclick="boton_enviar_solicitud_Click" Height="38px" Width="215px" />
+    <br />
+    <br />
 </asp:Content>

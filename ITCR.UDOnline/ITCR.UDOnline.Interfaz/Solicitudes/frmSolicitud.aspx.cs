@@ -64,7 +64,7 @@ namespace ITCR.UDOnline.Interfaz.Solicitudes
             }
 
             else
-                Response.Redirect("/frmNotificacion.aspx?op=notInc", true);
+                Server.Transfer("~/frmError.aspx", true);
         }
             
     }

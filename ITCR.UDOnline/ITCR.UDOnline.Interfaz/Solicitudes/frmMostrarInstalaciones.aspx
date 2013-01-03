@@ -31,7 +31,7 @@
                 <div>
 
                     <asp:GridView ID="Grid_Instalaciones2" runat="server" CellPadding="4" 
-                        ForeColor="#333333" GridLines="None">
+                        ForeColor="#333333" GridLines="None" Width="646px">
                         <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                         <Columns>
                             <asp:CommandField EditText="Mostrar" ShowCancelButton="False" 

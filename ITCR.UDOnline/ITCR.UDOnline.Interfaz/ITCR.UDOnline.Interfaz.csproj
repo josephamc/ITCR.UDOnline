@@ -53,14 +53,17 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Contact.aspx" />
+    <Content Include="frmError.aspx" />
     <Content Include="frmNotificacion.aspx" />
     <Content Include="images\bannerHead.png" />
     <Content Include="images\contentBg.png" />
     <Content Include="images\check.jpg" />
+    <Content Include="images\denegado.png" />
     <Content Include="images\footBg.png" />
     <Content Include="images\gtec-logo.png" />
     <Content Include="images\headBg.png" />
     <Content Include="images\ImgND2.png" />
+    <Content Include="images\InsIMG.JPG" />
     <Content Include="images\searchbg.png" />
     <Content Include="images\searchbtn.png" />
     <Content Include="images\solicitud.jpg" />
@@ -68,12 +71,12 @@
     <Content Include="Solicitudes\frmInstalacion.aspx" />
     <Content Include="Solicitudes\frmMostrarInstalaciones.aspx" />
     <Content Include="Solicitudes\frmSolicitud.aspx" />
-    <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
     <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Styles\Site.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -103,6 +106,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmError.aspx.cs">
+      <DependentUpon>frmError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmError.aspx.designer.cs">
+      <DependentUpon>frmError.aspx</DependentUpon>
     </Compile>
     <Compile Include="frmNotificacion.aspx.cs">
       <DependentUpon>frmNotificacion.aspx</DependentUpon>
