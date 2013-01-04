@@ -5,6 +5,10 @@
 <head id="Head1" runat="server">
     <title>Unidad Deportiva Online</title>
     <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    
+  <script type="text/javascript" src="../../Scripts/jquery.min.js"></script>
+  <script type="text/javascript" src="../../Scripts/image_slide.js"></script>
+  
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -13,7 +17,7 @@
     <div id="head">
      <div id="head_cen">
       <div id="head_sup" class="head_height">
-      <img src="../images/bannerHead.png" alt="" class="ban_bg" />
+       
        <p class="search">
         <label>SEARCH</label>
         <asp:TextBox ID="txt_search" runat="server" CssClass="txt"></asp:TextBox>
@@ -21,13 +25,23 @@
                onclick="btn_Search_Click" />
        </p>
         <h1 class="logo" style="position: relative"></h1>
-        <ul>
+        
+        <gl>
          <li><a href="../Default.aspx">INICIO</a></li>
          <li><a href="../Solicitudes/frmMostrarInstalaciones.aspx?from=btn">INSTALACIONES</a></li>
-         <!--<li><a href="Solicitudes/frmInstalacion.aspx">INSTALACIONES</a></li>-->
-         <!--<li><a href="Solicitudes/frmSolicitud.aspx">INSTALACIONES</a></li>-->
          <li><a href="../Contact.aspx">CONTÁCTENOS</a></li>
-       </ul>
+       </gl>
+
+       
+      <ul class="slideshow">
+        <li><img width="680" height="250" src="../../images/home1.png" alt="" /></li>
+        <li><img width="680" height="250" src="../../images/home2.jpg" alt="" /></li>
+        <li><img width="680" height="250" src="../../images/home3.jpg" alt="" /></li>
+        <li><img width="680" height="250" src="../../images/home4.jpg" alt="" /></li>
+        <li><img width="680" height="250" src="../../images/home5.jpg" alt="" /></li>
+        <li><img width="680" height="250" src="../../images/home6.jpg" alt="" /></li>
+      </ul> 
+
        </div>
       </div>
      </div>
@@ -53,16 +67,25 @@
     <div id="foot">
      <div id="foot_cen">
      <h6><a href="Default.aspx"></a></h6>
-     <ul style="position: relative">
-         <li><a href="../Default.aspx">INICIO</a></li>
-         <li class="space">|</li>
-         <li><a href="../about.html">ACERCA DE</a></li>
-         <li class="space">|</li>
-         <li><a class="active" href="../Contact.aspx">CONTÁCTENOS</a></li>
-       </ul>
+     <a>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <a href="../Default.aspx">INICIO</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <a href="../about.html">ACERCA DE</a>&nbsp;&nbsp;&nbsp;&nbsp;
+         <a class="active" href="../Contact.aspx">CONTÁCTENOS</a>
+       </a>
         <p>Unidad Deportiva Online © 2012</p>
+
+
+      
+
+
+
      </div><!-- foot_cen end -->
     </div>
     </form>
+
+    
+
+
 </body>
 </html>

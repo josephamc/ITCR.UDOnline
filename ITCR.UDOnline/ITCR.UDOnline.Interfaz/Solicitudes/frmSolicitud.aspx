@@ -10,10 +10,6 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h2>Formulario de Solicitud de Instalación Deportiva</h2>
     <br />    
-    <div id="imglogo">
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-         <img src="../../imagenes/ImgND2.png" alt=""/>
-    </div>
     <br />
     <div>
         <table>
