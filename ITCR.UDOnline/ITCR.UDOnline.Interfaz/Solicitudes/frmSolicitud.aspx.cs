@@ -31,40 +31,59 @@ namespace ITCR.UDOnline.Interfaz.Solicitudes
 
         protected void boton_enviar_solicitud_Click(object sender, EventArgs e)
         {
-            cUDGDFRESERVACIONNegocios Nueva_Consulta = new cUDGDFRESERVACIONNegocios(0, "", 0, "");
-            int iResultado = -1000;
-            string tiHRA_HORAINICIO = ddlAmPm1.Text.ToString() + ":"+DropDownList3.Text.ToString() + ":00";
-            string tiHRA_HORAFIN = ddlAmPm2.Text.ToString() + ":" + DropDownList4.Text.ToString() + ":00";
-            iResultado = Nueva_Consulta.ConsultarDisponibilidad(Convert.ToDateTime(txt_FechaInicio.Text.ToString()), Convert.ToDateTime(txt_FechaFin.Text.ToString()), DateTime.Parse(tiHRA_HORAINICIO), DateTime.Parse(tiHRA_HORAFIN), iIDInstalacion);
-            
-            if (iResultado == 1) {
-                cUDGDFSOLICITUDNegocios Nueva_Solicitud = new cUDGDFSOLICITUDNegocios(0, "", 0, "");
-                Nueva_Solicitud.FKY_INSTALACION = iIDInstalacion;
-                Nueva_Solicitud.FEC_INICIO=Convert.ToDateTime(txt_FechaInicio.Text.ToString());
-                Nueva_Solicitud.FEC_FIN=Convert.ToDateTime(txt_FechaFin.Text.ToString());
-                Nueva_Solicitud.FEC_SOLICITUD=DateTime.Now;
-                Nueva_Solicitud.HRA_INICIO=DateTime.Parse(tiHRA_HORAINICIO);
-                Nueva_Solicitud.HRA_FIN=DateTime.Parse(tiHRA_HORAFIN);
-                Nueva_Solicitud.NOM_ENCARGADO = TextBox_responsable.Text.ToString();
-                Nueva_Solicitud.NOM_INSTITUCION = TextBox_Solicitante.Text.ToString();
-                Nueva_Solicitud.COD_IDENTIFICACION=TextBox_identificacion.Text.ToString();
-                Nueva_Solicitud.CAN_USUARIOS=Int32.Parse(TextBox_cantidad.Text.ToString());
-                cUDGDFTPSOLTNTENegocios Solicitante = new cUDGDFTPSOLTNTENegocios(0, "", 0, "");
-                Nueva_Solicitud.FKY_TIPOSOLICITANTE=Solicitante.BuscarID(DropDownList1.Text.ToString());
-                Nueva_Solicitud.TXT_OBSERVACIONES=null;
-                Nueva_Solicitud.DSC_RAZONUSO=txt_razonUso.Value.ToString();
-                Nueva_Solicitud.COD_TIPOSOLICITUD= DropDownList2.Text.ToString();
-                Nueva_Solicitud.TXT_CORREO=TextBox_correo.Text.ToString();
-                Nueva_Solicitud.COD_ATENDIDO=false;
-                Nueva_Solicitud.TXT_USUARIOS=Textarea_involucradas.Value.ToString();
-                Nueva_Solicitud.Insertar();
+            TimeValidator1.Visible = false;
+            TimeValidator2.Visible = false;
+            DateValidator1.Visible = false;
+            DateValidator2.Visible = true;
+          
 
-                Response.Redirect("/frmNotificacion.aspx?op=notCor", true);
-              
+            try
+            {
+                cUDGDFRESERVACIONNegocios Nueva_Consulta = new cUDGDFRESERVACIONNegocios(0, "", 0, "");
+                int iResultado = -1000;
+                string tiHRA_HORAINICIO = txt_Inicio.Text + ":00 " + ddlAmPm1.SelectedItem.Value.ToString();
+                string tiHRA_HORAFIN = txt_Fin.Text + ":00 " + ddlAmPm2.SelectedItem.Value.ToString();
+
+                iResultado = Nueva_Consulta.ConsultarDisponibilidad(Convert.ToDateTime(txt_FechaInicio.Text.ToString()), Convert.ToDateTime(txt_FechaFin.Text.ToString()), DateTime.Parse(tiHRA_HORAINICIO), DateTime.Parse(tiHRA_HORAFIN), iIDInstalacion);
+
+                if (iResultado == 1)
+                {
+                    cUDGDFSOLICITUDNegocios Nueva_Solicitud = new cUDGDFSOLICITUDNegocios(0, "", 0, "");
+                    Nueva_Solicitud.FKY_INSTALACION = iIDInstalacion;
+                    Nueva_Solicitud.FEC_INICIO = Convert.ToDateTime(txt_FechaInicio.Text.ToString());
+                    Nueva_Solicitud.FEC_FIN = Convert.ToDateTime(txt_FechaFin.Text.ToString());
+                    Nueva_Solicitud.FEC_SOLICITUD = DateTime.Now;
+                    Nueva_Solicitud.HRA_INICIO = DateTime.Parse(tiHRA_HORAINICIO);
+                    Nueva_Solicitud.HRA_FIN = DateTime.Parse(tiHRA_HORAFIN);
+                    Nueva_Solicitud.NOM_ENCARGADO = TextBox_responsable.Text.ToString();
+                    Nueva_Solicitud.NOM_INSTITUCION = TextBox_Solicitante.Text.ToString();
+                    Nueva_Solicitud.COD_IDENTIFICACION = TextBox_identificacion.Text.ToString();
+                    Nueva_Solicitud.CAN_USUARIOS = Int32.Parse(TextBox_cantidad.Text.ToString());
+                    cUDGDFTPSOLTNTENegocios Solicitante = new cUDGDFTPSOLTNTENegocios(0, "", 0, "");
+                    Nueva_Solicitud.FKY_TIPOSOLICITANTE = Solicitante.BuscarID(DropDownList1.Text.ToString());
+                    Nueva_Solicitud.TXT_OBSERVACIONES = null;
+                    Nueva_Solicitud.DSC_RAZONUSO = txt_razonUso.Value.ToString();
+                    Nueva_Solicitud.COD_TIPOSOLICITUD = DropDownList2.Text.ToString();
+                    Nueva_Solicitud.TXT_CORREO = TextBox_correo.Text.ToString();
+                    Nueva_Solicitud.COD_ATENDIDO = false;
+                    Nueva_Solicitud.TXT_USUARIOS = Textarea_involucradas.Value.ToString();
+                    Nueva_Solicitud.Insertar();
+
+                    Response.Redirect("/frmNotificacion.aspx?op=notCor", true);
+
+                }
+
+                else
+                    Server.Transfer("~/frmError.aspx", true);
             }
 
-            else
-                Server.Transfer("~/frmError.aspx", true);
+            catch (Exception)
+            {
+                TimeValidator1.Visible = true;
+                TimeValidator2.Visible = true;
+                DateValidator1.Visible = true;
+                DateValidator2.Visible = true;
+            }
         }
             
     }

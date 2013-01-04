@@ -38,6 +38,9 @@
                         <td><asp:Label ID="lb_Fecha1" runat="server" Text="Fecha Inicio:" 
                                 style="font-weight: 700"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
                         <td><asp:TextBox ID="txt_FechaInicio" runat="server" Width="227px"></asp:TextBox> </td>
+                        <td><asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txt_FechaInicio" ErrorMessage="*"></asp:RequiredFieldValidator></td>                                                                         
+                         <td><asp:RegularExpressionValidator ID="DateValidator1" runat="server" ControlToValidate="txt_FechaInicio" Display="Dynamic" ErrorMessage="Fecha Inválida. Ingrese la fecha en un formato adecuado, ejemplo: 2012-12-31" ValidationExpression="^(19|20)\d\d[-](0[1-9]|1[012])[-] (0[1-9]|[12][0-9]|3[01])$" EnableClientScript="False"></asp:RegularExpressionValidator>
+                        </td>
                     </tr>
             
                     <tr>
@@ -45,6 +48,9 @@
                         <td><asp:Label ID="Label1" runat="server" Text="Fecha Fin:" 
                                 style="font-weight: 700"></asp:Label></td>
                         <td><asp:TextBox ID="txt_FechaFin" runat="server" Width="227px"></asp:TextBox> </td>
+                        <td><asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txt_FechaFin" ErrorMessage="*"></asp:RequiredFieldValidator></td>                                                                         
+                         <td><asp:RegularExpressionValidator ID="DateValidator2" runat="server" ControlToValidate="txt_FechaFin" Display="Dynamic" ErrorMessage="Fecha Inválida. Ingrese la fecha en un formato adecuado, ejemplo: 2012-12-31" ValidationExpression="^(19|20)\d\d[-](0[1-9]|1[012])[-] (0[1-9]|[12][0-9]|3[01])$" EnableClientScript="False"></asp:RegularExpressionValidator>
+                        </td>
                     </tr>
                 </table>
 
@@ -53,90 +59,49 @@
                     <asp:Label ID="Label3" runat="server" 
                         Text="Formato de Fecha yyyy-MM-dd , ejemplo: 2012-12-31" 
                         style="font-style: italic"></asp:Label>
-                </div>
-
+                    
+                    </div>
 
                 &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
 
                 <table>
-                    <tr>
-                        <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</td>
-                        <td><asp:Label ID="hra_inicio" runat="server" Text="Hora Inicio:" 
-                                style="font-weight: 700"></asp:Label></td>
-                       <!-- <td><asp:TextBox ID="txt_HoraInicio" runat="server" Width="90px"></asp:TextBox></td>-->
-                        <td><asp:DropDownList ID="ddlAmPm1" runat="server">
-                           <asp:ListItem Selected="True">1</asp:ListItem>
-                           <asp:ListItem Selected="False">2</asp:ListItem>
-                            <asp:ListItem Selected="false">3</asp:ListItem>
-                           <asp:ListItem Selected="False">4</asp:ListItem>
-                            <asp:ListItem Selected="false">5</asp:ListItem>
-                           <asp:ListItem Selected="False">6</asp:ListItem>
-                            <asp:ListItem Selected="false">7</asp:ListItem>
-                           <asp:ListItem Selected="False">8</asp:ListItem>
-                           <asp:ListItem Selected="false">9</asp:ListItem>
-                           <asp:ListItem Selected="False">10</asp:ListItem>
-                            <asp:ListItem Selected="false">11</asp:ListItem>
-                           <asp:ListItem Selected="False">12</asp:ListItem>
-                            <asp:ListItem Selected="false">13</asp:ListItem>
-                           <asp:ListItem Selected="False">14</asp:ListItem>
-                            <asp:ListItem Selected="false">15</asp:ListItem>
-                           <asp:ListItem Selected="False">16</asp:ListItem>
-                           <asp:ListItem Selected="False">17</asp:ListItem>
-                            <asp:ListItem Selected="false">18</asp:ListItem>
-                           <asp:ListItem Selected="False">19</asp:ListItem>
-                            <asp:ListItem Selected="false">20</asp:ListItem>
-                           <asp:ListItem Selected="False">21</asp:ListItem>
-                            <asp:ListItem Selected="false">22</asp:ListItem>
-                           <asp:ListItem Selected="False">23</asp:ListItem>
-                        </asp:DropDownList></td>
-                        <td><asp:DropDownList ID="DropDownList3" runat="server">
-                           <asp:ListItem Selected="True">00</asp:ListItem>
-                           <asp:ListItem Selected="False">30</asp:ListItem>
-            
-                        </asp:DropDownList></td>
-                      
+               
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</td>
+                    <td><asp:Label ID="hra_inicio" runat="server" Text="Hora Inicio:" 
+                            style="font-weight: 700"></asp:Label></td>
+                    <td><asp:TextBox ID="txt_Inicio" runat="server" Width="90px"></asp:TextBox></td>
+                    <td><asp:DropDownList ID="ddlAmPm1" runat="server">
+                       <asp:ListItem Selected="True">AM</asp:ListItem>
+                       <asp:ListItem Selected="False">PM</asp:ListItem>
+                    </asp:DropDownList></td>
+                    <td><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txt_Inicio" ErrorMessage="*"></asp:RequiredFieldValidator></td>
+                    <td><asp:RegularExpressionValidator ID="TimeValidator1" runat="server" ControlToValidate="txt_Inicio" Display="Dynamic" ErrorMessage="Hora Invalida. Ingrese la hora en un formato adecuado, ejemplo: 12:30 o 5:00" ValidationExpression="^(1[0-2]|[1-9]):[0-5][0-9]$" EnableClientScript="False"></asp:RegularExpressionValidator>
+                        </td>
+                    <td>&nbsp;</td>
+                </tr>
 
-                    </tr>
-        
-                    <tr>            
-                        <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</td>
-                        <td><asp:Label ID="hra_fin" runat="server" Text="Hora Fin:" 
-                                style="font-weight: 700"></asp:Label></td>
-                        
-                        <td><asp:DropDownList ID="ddlAmPm2" runat="server">
-                          <asp:ListItem Selected="True">1</asp:ListItem>
-                           <asp:ListItem Selected="False">2</asp:ListItem>
-                            <asp:ListItem Selected="false">3</asp:ListItem>
-                           <asp:ListItem Selected="False">4</asp:ListItem>
-                            <asp:ListItem Selected="false">5</asp:ListItem>
-                           <asp:ListItem Selected="False">6</asp:ListItem>
-                            <asp:ListItem Selected="false">7</asp:ListItem>
-                           <asp:ListItem Selected="False">8</asp:ListItem>
-                           <asp:ListItem Selected="false">9</asp:ListItem>
-                           <asp:ListItem Selected="False">10</asp:ListItem>
-                            <asp:ListItem Selected="false">11</asp:ListItem>
-                           <asp:ListItem Selected="False">12</asp:ListItem>
-                            <asp:ListItem Selected="false">13</asp:ListItem>
-                           <asp:ListItem Selected="False">14</asp:ListItem>
-                            <asp:ListItem Selected="false">15</asp:ListItem>
-                           <asp:ListItem Selected="False">16</asp:ListItem>
-                           <asp:ListItem Selected="False">17</asp:ListItem>
-                            <asp:ListItem Selected="false">18</asp:ListItem>
-                           <asp:ListItem Selected="False">19</asp:ListItem>
-                            <asp:ListItem Selected="false">20</asp:ListItem>
-                           <asp:ListItem Selected="False">21</asp:ListItem>
-                            <asp:ListItem Selected="false">22</asp:ListItem>
-                           <asp:ListItem Selected="False">23</asp:ListItem>
-                        </asp:DropDownList></td>
-                        <td><asp:DropDownList ID="DropDownList4" runat="server">
-                           <asp:ListItem Selected="True">00</asp:ListItem>
-                           <asp:ListItem Selected="False">30</asp:ListItem>
-            
-                        </asp:DropDownList></td>
-                       
-                        <tr><td><br /></td></tr>
-                    </tr>
+                <tr>            
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</td>
+                    <td><asp:Label ID="hra_fin" runat="server" Text="Hora Fin:" 
+                            style="font-weight: 700"></asp:Label></td>
+                    <td><asp:TextBox ID="txt_Fin" runat="server" Width="90px"></asp:TextBox></td>
+                    <td><asp:DropDownList ID="ddlAmPm2" runat="server">
+                       <asp:ListItem Selected="True">AM</asp:ListItem>
+                       <asp:ListItem Selected="False">PM</asp:ListItem>
+                    </asp:DropDownList></td>
+                    <td><asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txt_Fin" ErrorMessage="*"></asp:RequiredFieldValidator></td>
+                    <td><asp:RegularExpressionValidator ID="TimeValidator2" runat="server" ControlToValidate="txt_Fin" Display="Dynamic" ErrorMessage="Hora Invalida. Ingrese la hora en un formato adecuado, ejemplo: 12:30 o 5:00" ValidationExpression="^(1[0-2]|[1-9]):[0-5][0-9]$" EnableClientScript="False"></asp:RegularExpressionValidator>
+                        </td>
+                </tr>  
                 </table>
+
+                <div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;<asp:Label 
+                    ID="nota" runat="server" Text="Formato de Hora= hh:mm, ejemplo: 6:45" 
+                    style="font-style: italic"></asp:Label>
+                    <br />
+                 </div>
                 
                 </td>
             </tr>        
