@@ -35,7 +35,7 @@
                                 style="font-weight: 700"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
                         <td><asp:TextBox ID="txt_FechaInicio" runat="server" Width="227px"></asp:TextBox> </td>
                         <td><asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txt_FechaInicio" ErrorMessage="*"></asp:RequiredFieldValidator></td>                                                                         
-                         <td><asp:RegularExpressionValidator ID="DateValidator1" runat="server" ControlToValidate="txt_FechaInicio" Display="Dynamic" ErrorMessage="Fecha inválida. Ingrese la fecha en un formato adecuado, ejemplo: 2012-12-31" ValidationExpression="^(19|20)\d\d[-](0[1-9]|1[012])[-] (0[1-9]|[12][0-9]|3[01])$" EnableClientScript="False" ForeColor="Red"></asp:RegularExpressionValidator>
+                         <td><asp:RegularExpressionValidator ID="DateValidator1" runat="server" ControlToValidate="txt_FechaInicio" Display="Dynamic" ErrorMessage="Fecha inválida. Ingrese la fecha en un formato adecuado, ejemplo: 2012-12-31" ValidationExpression="((19|20)\d\d)[-](0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])" EnableClientScript="False" ForeColor="Red"></asp:RegularExpressionValidator>
                         </td>
                     </tr>
             
@@ -45,7 +45,7 @@
                                 style="font-weight: 700"></asp:Label></td>
                         <td><asp:TextBox ID="txt_FechaFin" runat="server" Width="227px"></asp:TextBox> </td>
                         <td><asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txt_FechaFin" ErrorMessage="*"></asp:RequiredFieldValidator></td>                                                                         
-                         <td><asp:RegularExpressionValidator ID="DateValidator2" runat="server" ControlToValidate="txt_FechaFin" Display="Dynamic" ErrorMessage="Fecha inválida. Ingrese la fecha en un formato adecuado, ejemplo: 2012-12-31" ValidationExpression="^(19|20)\d\d[-](0[1-9]|1[012])[-] (0[1-9]|[12][0-9]|3[01])$" EnableClientScript="False" ForeColor="Red"></asp:RegularExpressionValidator>
+                         <td><asp:RegularExpressionValidator ID="DateValidator2" runat="server" ControlToValidate="txt_FechaFin" Display="Dynamic" ErrorMessage="Fecha inválida. Ingrese la fecha en un formato adecuado, ejemplo: 2012-12-31" ValidationExpression="((19|20)\d\d)[-](0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])" EnableClientScript="False" ForeColor="Red"></asp:RegularExpressionValidator>
                         </td>
                     </tr>
                 </table>
