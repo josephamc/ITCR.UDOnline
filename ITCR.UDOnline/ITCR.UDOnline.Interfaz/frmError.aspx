@@ -16,9 +16,8 @@
                     Ya existe alguna reservación previamente aprobada para la instalacion que desea utilizar, en el dia y la hora que indicó
                 </h3>
                 <br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <asp:HyperLink ID="lnkHome" runat="server" NavigateUrl="~/Default.aspx">Volver al inicio</asp:HyperLink>
-                
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Button ID="btn_redirect" runat="server" Text="Volver al formulario" />
             </div>
         </td>
     </tr>

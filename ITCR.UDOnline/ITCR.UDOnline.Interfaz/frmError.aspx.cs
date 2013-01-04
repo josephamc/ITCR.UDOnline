@@ -11,7 +11,7 @@ namespace ITCR.UDOnline.Interfaz
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+           btn_redirect.Attributes.Add("onclick", "javascript:history.go(-1);return false");
         }
     }
 }

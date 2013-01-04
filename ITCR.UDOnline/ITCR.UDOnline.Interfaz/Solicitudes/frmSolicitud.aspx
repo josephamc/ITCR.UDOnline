@@ -111,6 +111,9 @@
                 <td><asp:Label ID="lb_solicitante" runat="server" Text="Institución o grupo Solicitante*:" 
                         style="font-weight: 700"></asp:Label></td>
                   <td><asp:TextBox ID="TextBox_Solicitante" runat="server" Width="227px"></asp:TextBox> </td>
+                   <td><asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="TextBox_Solicitante" ErrorMessage="Esta campo no puede ser vacio" ForeColor="Red"></asp:RequiredFieldValidator></td>
+                    <td><asp:RegularExpressionValidator ID="ValidaSolicitante" runat="server" ControlToValidate="TextBox_Solicitante" Display="Dynamic" ErrorMessage="*" ValidationExpression="^[A-Z0-9 a-z]*" EnableClientScript="False" ForeColor="Red"></asp:RegularExpressionValidator>
+                        </td>
             </tr>
 
              <tr>
@@ -119,6 +122,10 @@
                 <td><asp:Label ID="lb_responsable" runat="server" Text="Persona Responsable:" 
                         style="font-weight: 700"></asp:Label></td>
                   <td><asp:TextBox ID="TextBox_responsable" runat="server" Width="227px"></asp:TextBox> </td>
+                  <td><asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="TextBox_responsable" ErrorMessage="Esta campo no puede ser vacio" ForeColor="Red"></asp:RequiredFieldValidator></td>
+                    <td><asp:RegularExpressionValidator ID="ValidaResponsable" runat="server" ControlToValidate="TextBox_responsable" Display="Dynamic" ErrorMessage="*" ValidationExpression="^[A-Z0-9 a-z]*" EnableClientScript="False" ForeColor="Red"></asp:RegularExpressionValidator>
+                        </td>
+
             </tr>
 
              <tr>
@@ -126,6 +133,9 @@
                 <td><asp:Label ID="lb_identificacion" runat="server" Text="Carné o Cédula:" 
                         style="font-weight: 700"></asp:Label></td>
                   <td><asp:TextBox ID="TextBox_identificacion" runat="server" Width="227px"></asp:TextBox> </td>
+                   <td><asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="TextBox_identificacion" ErrorMessage="Esta campo no puede ser vacio" ForeColor="Red"></asp:RequiredFieldValidator></td>
+                    <td><asp:RegularExpressionValidator ID="ValidaIdentificacion" runat="server" ControlToValidate="TextBox_identificacion" Display="Dynamic" ErrorMessage="*" ValidationExpression="^[A-Z0-9 a-z]*" EnableClientScript="False" ForeColor="Red"></asp:RegularExpressionValidator>
+                        </td>
             </tr>
 
             <tr>
@@ -141,15 +151,21 @@
                        
            </tr>
             
-             <tr>
+            <tr>
                 <td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                 <td><asp:Label ID="lb_cantidad" runat="server" Text="Cantidad de Usuarios:" 
                         style="font-weight: 700"></asp:Label></td>
                   <td><asp:TextBox ID="TextBox_cantidad" runat="server" Width="227px"></asp:TextBox> </td>
-                   <td><asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="TextBox_cantidad" ErrorMessage="*"></asp:RequiredFieldValidator></td>
+               <td><asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="TextBox_cantidad" ErrorMessage="*"></asp:RequiredFieldValidator></td>
                     <td><asp:RegularExpressionValidator ID="NumberValidator" runat="server" ControlToValidate="TextBox_cantidad" Display="Dynamic" ErrorMessage="Número inválido. Ingrese un número válido, ejemplo: 7" ValidationExpression="^\d+$" EnableClientScript="False" ForeColor="Red"></asp:RegularExpressionValidator>
                         </td>
+                        
             </tr>
+
+
+             
+
+
     </table>
     <br />
     <table>
@@ -158,8 +174,8 @@
                 <td><asp:Label ID="lb_uso" runat="server" Text="Razón de uso:" 
                         style="font-weight: 700"></asp:Label></td>
                 <td><textarea id="txt_razonUso" cols= "75" rows="7" runat="server"></textarea></td>
-                 <td><asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txt_razonUso" ErrorMessage="Esta campo no puede ser vacio"></asp:RequiredFieldValidator></td>
-                    <td><asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txt_razonUso" Display="Dynamic" ErrorMessage="*" ValidationExpression="^[A-Z0-9 a-z]*" EnableClientScript="False" ForeColor="Red"></asp:RegularExpressionValidator>
+                 <td><asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txt_razonUso" ErrorMessage="Esta campo no puede ser vacio" ForeColor="Red"></asp:RequiredFieldValidator></td>
+                    <td><asp:RegularExpressionValidator ID="ValidaRazonUso" runat="server" ControlToValidate="txt_razonUso" Display="Dynamic" ErrorMessage="*" ValidationExpression="^[A-Z0-9 a-z]*" EnableClientScript="False" ForeColor="Red"></asp:RegularExpressionValidator>
                         </td>
             </tr>
 
@@ -169,7 +185,7 @@
                         style="font-weight: 700"></asp:Label></td>
                 <td><textarea id="Textarea_involucradas" cols= "75" rows="7" runat="server"></textarea></td>
                 <td><asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="Textarea_involucradas" ErrorMessage="*"></asp:RequiredFieldValidator></td>
-                    <td><asp:RegularExpressionValidator ID="InvolucradasValidator" runat="server" ControlToValidate="Textarea_involucradas" Display="Dynamic" ErrorMessage="Error en el formato, debe ingresar los involucrados de la siguiente forma: persona1, persona2, persona3, ...." ValidationExpression="^[A-Z a-z][, A-Z a-z]*[A-Z a-z]$" EnableClientScript="False" ForeColor="Red"></asp:RegularExpressionValidator>
+                    <td><asp:RegularExpressionValidator ID="InvolucradasValidator" runat="server" ControlToValidate="Textarea_involucradas" Display="Dynamic" ErrorMessage="Error en el formato, debe ingresar los involucrados de la siguiente forma: persona1, persona2, persona3, ...." ValidationExpression="^[A-Z a-z]*[, A-Z a-z]*[A-Z a-z]$" EnableClientScript="False" ForeColor="Red"></asp:RegularExpressionValidator>
                         </td>
             </tr>
             </table>
