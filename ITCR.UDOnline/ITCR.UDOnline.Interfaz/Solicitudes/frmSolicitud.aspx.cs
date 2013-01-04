@@ -29,15 +29,23 @@ namespace ITCR.UDOnline.Interfaz.Solicitudes
             catch (Exception) { }
         }
 
+        protected void prueba(string responsable, string solicitante, string identificacion, int cantidad, string razonUso, string correo)
+        {
+
+            string prueba = responsable + solicitante + identificacion + razonUso + correo;
+            int can = cantidad + 0;
+
+        }
+
         protected void boton_enviar_solicitud_Click(object sender, EventArgs e)
         {
-           // TimeValidator1.Visible = false;
+            // TimeValidator1.Visible = false;
             //TimeValidator2.Visible = false;
             //DateValidator1.Visible = false;
             //DateValidator2.Visible = false;
-           // EmailValidator.Visible = false;
-           // NumberValidator.Visible = false;
-          //  InvolucradasValidator.Visible = false;
+            // EmailValidator.Visible = false;
+            // NumberValidator.Visible = false;
+            //  InvolucradasValidator.Visible = false;
 
             try
             {
@@ -76,20 +84,21 @@ namespace ITCR.UDOnline.Interfaz.Solicitudes
                 }
 
                 else
-                    Response.Redirect("/frmError.aspx", true);
+                    prueba(TextBox_responsable.Text.ToString(), TextBox_Solicitante.Text.ToString(), TextBox_identificacion.Text.ToString(), Int32.Parse(TextBox_cantidad.Text.ToString()), txt_razonUso.Value.ToString(), TextBox_correo.Text.ToString());
+                Response.Redirect("/frmError.aspx", true);
             }
 
             catch (Exception)
             {
-              //  TimeValidator1.Visible = true;
-              //  TimeValidator2.Visible = true;
-               // DateValidator1.Visible = true;
-               // DateValidator2.Visible = true;
-                EmailValidator.Visible = true;
-                NumberValidator.Visible = true;
-                InvolucradasValidator.Visible = true;
+                //  TimeValidator1.Visible = true;
+                //  TimeValidator2.Visible = true;
+                // DateValidator1.Visible = true;
+                // DateValidator2.Visible = true;
+                // EmailValidator.Visible = true;
+                //  NumberValidator.Visible = true;
+                //  InvolucradasValidator.Visible = true;
             }
         }
-            
+
     }
 }
