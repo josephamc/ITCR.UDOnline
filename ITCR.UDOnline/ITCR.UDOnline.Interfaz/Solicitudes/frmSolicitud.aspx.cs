@@ -34,8 +34,10 @@ namespace ITCR.UDOnline.Interfaz.Solicitudes
             TimeValidator1.Visible = false;
             TimeValidator2.Visible = false;
             DateValidator1.Visible = false;
-            DateValidator2.Visible = true;
-          
+            DateValidator2.Visible = false;
+            EmailValidator.Visible = false;
+            NumberValidator.Visible = false;
+            InvolucradasValidator.Visible = false;
 
             try
             {
@@ -83,6 +85,9 @@ namespace ITCR.UDOnline.Interfaz.Solicitudes
                 TimeValidator2.Visible = true;
                 DateValidator1.Visible = true;
                 DateValidator2.Visible = true;
+                EmailValidator.Visible = true;
+                NumberValidator.Visible = true;
+                InvolucradasValidator.Visible = true;
             }
         }
             

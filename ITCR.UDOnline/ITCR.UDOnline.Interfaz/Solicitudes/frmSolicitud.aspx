@@ -35,7 +35,7 @@
                                 style="font-weight: 700"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
                         <td><asp:TextBox ID="txt_FechaInicio" runat="server" Width="227px"></asp:TextBox> </td>
                         <td><asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txt_FechaInicio" ErrorMessage="*"></asp:RequiredFieldValidator></td>                                                                         
-                         <td><asp:RegularExpressionValidator ID="DateValidator1" runat="server" ControlToValidate="txt_FechaInicio" Display="Dynamic" ErrorMessage="Fecha Inválida. Ingrese la fecha en un formato adecuado, ejemplo: 2012-12-31" ValidationExpression="^(19|20)\d\d[-](0[1-9]|1[012])[-] (0[1-9]|[12][0-9]|3[01])$" EnableClientScript="False"></asp:RegularExpressionValidator>
+                         <td><asp:RegularExpressionValidator ID="DateValidator1" runat="server" ControlToValidate="txt_FechaInicio" Display="Dynamic" ErrorMessage="Fecha inválida. Ingrese la fecha en un formato adecuado, ejemplo: 2012-12-31" ValidationExpression="^(19|20)\d\d[-](0[1-9]|1[012])[-] (0[1-9]|[12][0-9]|3[01])$" EnableClientScript="False" ForeColor="Red"></asp:RegularExpressionValidator>
                         </td>
                     </tr>
             
@@ -45,7 +45,7 @@
                                 style="font-weight: 700"></asp:Label></td>
                         <td><asp:TextBox ID="txt_FechaFin" runat="server" Width="227px"></asp:TextBox> </td>
                         <td><asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txt_FechaFin" ErrorMessage="*"></asp:RequiredFieldValidator></td>                                                                         
-                         <td><asp:RegularExpressionValidator ID="DateValidator2" runat="server" ControlToValidate="txt_FechaFin" Display="Dynamic" ErrorMessage="Fecha Inválida. Ingrese la fecha en un formato adecuado, ejemplo: 2012-12-31" ValidationExpression="^(19|20)\d\d[-](0[1-9]|1[012])[-] (0[1-9]|[12][0-9]|3[01])$" EnableClientScript="False"></asp:RegularExpressionValidator>
+                         <td><asp:RegularExpressionValidator ID="DateValidator2" runat="server" ControlToValidate="txt_FechaFin" Display="Dynamic" ErrorMessage="Fecha inválida. Ingrese la fecha en un formato adecuado, ejemplo: 2012-12-31" ValidationExpression="^(19|20)\d\d[-](0[1-9]|1[012])[-] (0[1-9]|[12][0-9]|3[01])$" EnableClientScript="False" ForeColor="Red"></asp:RegularExpressionValidator>
                         </td>
                     </tr>
                 </table>
@@ -72,7 +72,7 @@
                        <asp:ListItem Selected="False">PM</asp:ListItem>
                     </asp:DropDownList></td>
                     <td><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txt_Inicio" ErrorMessage="*"></asp:RequiredFieldValidator></td>
-                    <td><asp:RegularExpressionValidator ID="TimeValidator1" runat="server" ControlToValidate="txt_Inicio" Display="Dynamic" ErrorMessage="Hora Invalida. Ingrese la hora en un formato adecuado, ejemplo: 12:30 o 5:00" ValidationExpression="^(1[0-2]|[1-9]):[0-5][0-9]$" EnableClientScript="False"></asp:RegularExpressionValidator>
+                    <td><asp:RegularExpressionValidator ID="TimeValidator1" runat="server" ControlToValidate="txt_Inicio" Display="Dynamic" ErrorMessage="Hora inválida. Ingrese la hora en un formato adecuado, ejemplo: 12:30 o 5:00" ValidationExpression="^(1[0-2]|[1-9]):[0-5][0-9]$" EnableClientScript="False" ForeColor="Red"></asp:RegularExpressionValidator>
                         </td>
                     <td>&nbsp;</td>
                 </tr>
@@ -87,7 +87,7 @@
                        <asp:ListItem Selected="False">PM</asp:ListItem>
                     </asp:DropDownList></td>
                     <td><asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txt_Fin" ErrorMessage="*"></asp:RequiredFieldValidator></td>
-                    <td><asp:RegularExpressionValidator ID="TimeValidator2" runat="server" ControlToValidate="txt_Fin" Display="Dynamic" ErrorMessage="Hora Invalida. Ingrese la hora en un formato adecuado, ejemplo: 12:30 o 5:00" ValidationExpression="^(1[0-2]|[1-9]):[0-5][0-9]$" EnableClientScript="False"></asp:RegularExpressionValidator>
+                    <td><asp:RegularExpressionValidator ID="TimeValidator2" runat="server" ControlToValidate="txt_Fin" Display="Dynamic" ErrorMessage="Hora inválida. Ingrese la hora en un formato adecuado, ejemplo: 12:30 o 5:00" ValidationExpression="^(1[0-2]|[1-9]):[0-5][0-9]$" EnableClientScript="False" ForeColor="Red"></asp:RegularExpressionValidator>
                         </td>
                 </tr>  
                 </table>
@@ -103,9 +103,10 @@
             </tr>        
         </table>
     </div>
-
+    <br />
     <table>
             <tr>
+                
                 <td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                 <td><asp:Label ID="lb_solicitante" runat="server" Text="Institución o grupo Solicitante*:" 
                         style="font-weight: 700"></asp:Label></td>
@@ -114,6 +115,7 @@
 
              <tr>
                 <td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+
                 <td><asp:Label ID="lb_responsable" runat="server" Text="Persona Responsable:" 
                         style="font-weight: 700"></asp:Label></td>
                   <td><asp:TextBox ID="TextBox_responsable" runat="server" Width="227px"></asp:TextBox> </td>
@@ -144,13 +146,21 @@
                 <td><asp:Label ID="lb_cantidad" runat="server" Text="Cantidad de Usuarios:" 
                         style="font-weight: 700"></asp:Label></td>
                   <td><asp:TextBox ID="TextBox_cantidad" runat="server" Width="227px"></asp:TextBox> </td>
+                   <td><asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="TextBox_cantidad" ErrorMessage="*"></asp:RequiredFieldValidator></td>
+                    <td><asp:RegularExpressionValidator ID="NumberValidator" runat="server" ControlToValidate="TextBox_cantidad" Display="Dynamic" ErrorMessage="Número inválido. Ingrese un número válido, ejemplo: 7" ValidationExpression="^\d+$" EnableClientScript="False" ForeColor="Red"></asp:RegularExpressionValidator>
+                        </td>
             </tr>
-
+    </table>
+    <br />
+    <table>
              <tr>
                 <td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                 <td><asp:Label ID="lb_uso" runat="server" Text="Razón de uso:" 
                         style="font-weight: 700"></asp:Label></td>
                 <td><textarea id="txt_razonUso" cols= "75" rows="7" runat="server"></textarea></td>
+                 <td><asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txt_razonUso" ErrorMessage="Esta campo no puede ser vacio"></asp:RequiredFieldValidator></td>
+                    <td><asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txt_razonUso" Display="Dynamic" ErrorMessage="*" ValidationExpression="^[A-Z0-9 a-z]*" EnableClientScript="False" ForeColor="Red"></asp:RegularExpressionValidator>
+                        </td>
             </tr>
 
               <tr>
@@ -158,13 +168,24 @@
                 <td><asp:Label ID="lb_involucradas" runat="server" Text="Personas Involucradas:" 
                         style="font-weight: 700"></asp:Label></td>
                 <td><textarea id="Textarea_involucradas" cols= "75" rows="7" runat="server"></textarea></td>
+                <td><asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="Textarea_involucradas" ErrorMessage="*"></asp:RequiredFieldValidator></td>
+                    <td><asp:RegularExpressionValidator ID="InvolucradasValidator" runat="server" ControlToValidate="Textarea_involucradas" Display="Dynamic" ErrorMessage="Error en el formato, debe ingresar los involucrados de la siguiente forma: persona1, persona2, persona3, ...." ValidationExpression="^[A-Z a-z][, A-Z a-z]*[A-Z a-z]$" EnableClientScript="False" ForeColor="Red"></asp:RegularExpressionValidator>
+                        </td>
             </tr>
+            </table>
 
+            <br />
+            <br />
+            <table>
             <tr>
+                
                 <td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
                 <td><asp:Label ID="lb_correo" runat="server" Text="Correo Electrónico:" 
                         style="font-weight: 700"></asp:Label></td>
                   <td><asp:TextBox ID="TextBox_correo" runat="server" Width="227px"></asp:TextBox> </td>
+                   <td><asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBox_correo" ErrorMessage="*"></asp:RequiredFieldValidator></td>
+                    <td><asp:RegularExpressionValidator ID="EmailValidator" runat="server" ControlToValidate="TextBox_correo" Display="Dynamic" ErrorMessage="Correo electrónico inválido. Ingrese el correo en un formato adecuado, ejemplo: estudiantec@itcr.com" ValidationExpression="^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$" EnableClientScript="False" ForeColor="Red"></asp:RegularExpressionValidator>
+                        </td>
             </tr>
 
              <tr>
