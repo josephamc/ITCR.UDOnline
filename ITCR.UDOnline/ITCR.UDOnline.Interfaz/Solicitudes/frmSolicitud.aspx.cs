@@ -7,6 +7,13 @@ using System.Web.UI.WebControls;
 using ITCR.UDSystem.Negocios;
 using System.Data;
 
+
+
+
+using System.Text.RegularExpressions;
+
+
+
 namespace ITCR.UDOnline.Interfaz.Solicitudes
 {
     public partial class frmSolicitud : System.Web.UI.Page
@@ -29,7 +36,7 @@ namespace ITCR.UDOnline.Interfaz.Solicitudes
             catch (Exception) { }
         }
 
-        protected void prueba(string responsable, string solicitante, string identificacion, int cantidad, string razonUso, string correo)
+        private void validaFormulario(string responsable, string solicitante, string identificacion, int cantidad, string razonUso, string correo)
         {
 
             string prueba = responsable + solicitante + identificacion + razonUso + correo;
@@ -37,26 +44,70 @@ namespace ITCR.UDOnline.Interfaz.Solicitudes
 
         }
 
+
+        private int validaFechas(DateTime FechaInicio, DateTime FechaFin, DateTime HoraInicio, DateTime HoraFin) {
+
+            if (FechaInicio == FechaFin) {
+                if (HoraInicio >= HoraFin)
+                    return -1;
+                else
+                    return 1;
+            }
+
+            if (FechaInicio > FechaFin)
+            
+                return -1;
+
+            else
+                return 1;
+        }
+
+
+
+        private bool EvaluateIsValid(string val)
+        {
+         
+            string pattern = @"^[a-z][a-z|0-9|]*([_][a-z|0-9]+)*([.][a-z|0-9]+([_][a-z|0-9]+)*)?@[a-z][a-z|0-9|]*\.([a-z][a-z|0-9]*(\.[a-z][a-z|0-9]*)?)$";
+            Match match = Regex.Match(val.Trim(), pattern, RegexOptions.IgnoreCase);
+
+            if (match.Success)
+                return true;
+            else
+                return false;
+        }
+
+
+
+
         protected void boton_enviar_solicitud_Click(object sender, EventArgs e)
         {
-            // TimeValidator1.Visible = false;
-            //TimeValidator2.Visible = false;
-            //DateValidator1.Visible = false;
-            //DateValidator2.Visible = false;
-            // EmailValidator.Visible = false;
-            // NumberValidator.Visible = false;
-            //  InvolucradasValidator.Visible = false;
+            TimeValidator1.Visible = false;
+            TimeValidator2.Visible = false;
+            DateValidator1.Visible = false;
+            DateValidator2.Visible = false;
+            EmailValidator.Visible = false;
+            NumberValidator.Visible = false;
+            InvolucradasValidator.Visible = false;
+            ValidaSolicitante.Visible = false;
+            ValidaResponsable.Visible = false;
+            ValidaIdentificacion.Visible = false;
+            ValidaRazonUso.Visible = false;
+            InvolucradasValidator.Visible = false;
 
             try
             {
+                
+                int fecha = 0;
+                bool email = false;
                 cUDGDFRESERVACIONNegocios Nueva_Consulta = new cUDGDFRESERVACIONNegocios(0, "", 0, "");
                 int iResultado = -1000;
                 string tiHRA_HORAINICIO = txt_Inicio.Text + ":00 " + ddlAmPm1.SelectedItem.Value.ToString();
                 string tiHRA_HORAFIN = txt_Fin.Text + ":00 " + ddlAmPm2.SelectedItem.Value.ToString();
-
+                validaFormulario(TextBox_responsable.Text.ToString(), TextBox_Solicitante.Text.ToString(), TextBox_identificacion.Text.ToString(), Int32.Parse(TextBox_cantidad.Text.ToString()), txt_razonUso.Value.ToString(), TextBox_correo.Text.ToString());
+                fecha = validaFechas(Convert.ToDateTime(txt_FechaInicio.Text.ToString()), Convert.ToDateTime(txt_FechaFin.Text.ToString()), DateTime.Parse(tiHRA_HORAINICIO), DateTime.Parse(tiHRA_HORAFIN));
                 iResultado = Nueva_Consulta.ConsultarDisponibilidad(Convert.ToDateTime(txt_FechaInicio.Text.ToString()), Convert.ToDateTime(txt_FechaFin.Text.ToString()), DateTime.Parse(tiHRA_HORAINICIO), DateTime.Parse(tiHRA_HORAFIN), iIDInstalacion);
-
-                if (iResultado == 1)
+                email = EvaluateIsValid(TextBox_correo.Text.ToString());
+                if (iResultado == 1 && fecha==1 && email==true)
                 {
                     cUDGDFSOLICITUDNegocios Nueva_Solicitud = new cUDGDFSOLICITUDNegocios(0, "", 0, "");
                     Nueva_Solicitud.FKY_INSTALACION = iIDInstalacion;
@@ -83,21 +134,37 @@ namespace ITCR.UDOnline.Interfaz.Solicitudes
 
                 }
 
-                else
-                    prueba(TextBox_responsable.Text.ToString(), TextBox_Solicitante.Text.ToString(), TextBox_identificacion.Text.ToString(), Int32.Parse(TextBox_cantidad.Text.ToString()), txt_razonUso.Value.ToString(), TextBox_correo.Text.ToString());
-                Response.Redirect("/frmError.aspx", true);
+                    if (fecha == -1)
+                    {
+                        Response.Redirect("/frmErrorFechas.aspx", true);
+                    }
+
+                    if (email == false) {
+                        Response.Redirect("/frmErrorEmail.aspx", true);
+                    }
+
+                    else
+
+                        Response.Redirect("/frmError.aspx", true);
             }
 
             catch (Exception)
             {
-                //  TimeValidator1.Visible = true;
-                //  TimeValidator2.Visible = true;
-                // DateValidator1.Visible = true;
-                // DateValidator2.Visible = true;
-                // EmailValidator.Visible = true;
-                //  NumberValidator.Visible = true;
-                //  InvolucradasValidator.Visible = true;
+                  
             }
+
+            TimeValidator1.Visible = true;
+            TimeValidator2.Visible = true;
+            DateValidator1.Visible = true;
+            DateValidator2.Visible = true;
+            EmailValidator.Visible = true;
+            NumberValidator.Visible = true;
+            InvolucradasValidator.Visible = true;
+            ValidaSolicitante.Visible = true;
+            ValidaResponsable.Visible = true;
+            ValidaIdentificacion.Visible = true;
+            ValidaRazonUso.Visible = true;
+            InvolucradasValidator.Visible = true;
         }
 
     }

@@ -53,6 +53,8 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Contact.aspx" />
+    <Content Include="frmErrorEmail.aspx" />
+    <Content Include="frmErrorFechas.aspx" />
     <Content Include="frmError.aspx" />
     <Content Include="frmNotificacion.aspx" />
     <Content Include="images\bannerHead.png" />
@@ -115,6 +117,20 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmErrorEmail.aspx.cs">
+      <DependentUpon>frmErrorEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmErrorEmail.aspx.designer.cs">
+      <DependentUpon>frmErrorEmail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmErrorFechas.aspx.cs">
+      <DependentUpon>frmErrorFechas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmErrorFechas.aspx.designer.cs">
+      <DependentUpon>frmErrorFechas.aspx</DependentUpon>
     </Compile>
     <Compile Include="frmError.aspx.cs">
       <DependentUpon>frmError.aspx</DependentUpon>
