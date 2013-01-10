@@ -53,6 +53,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Contact.aspx" />
+    <Content Include="frmErrorDia.aspx" />
     <Content Include="frmErrorEmail.aspx" />
     <Content Include="frmErrorFechas.aspx" />
     <Content Include="frmError.aspx" />
@@ -117,6 +118,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmErrorDia.aspx.cs">
+      <DependentUpon>frmErrorDia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmErrorDia.aspx.designer.cs">
+      <DependentUpon>frmErrorDia.aspx</DependentUpon>
     </Compile>
     <Compile Include="frmErrorEmail.aspx.cs">
       <DependentUpon>frmErrorEmail.aspx</DependentUpon>

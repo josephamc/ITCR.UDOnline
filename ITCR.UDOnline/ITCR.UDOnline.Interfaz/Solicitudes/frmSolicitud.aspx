@@ -70,6 +70,7 @@
                     <td><asp:DropDownList ID="ddlAmPm1" runat="server">
                        <asp:ListItem Selected="True">AM</asp:ListItem>
                        <asp:ListItem Selected="False">PM</asp:ListItem>
+                       <asp:ListItem Selected="False">MD</asp:ListItem>
                     </asp:DropDownList></td>
                     <td><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txt_Inicio" ErrorMessage="*"></asp:RequiredFieldValidator></td>
                     <td><asp:RegularExpressionValidator ID="TimeValidator1" runat="server" ControlToValidate="txt_Inicio" Display="Dynamic" ErrorMessage="Hora inválida. Ingrese la hora en un formato adecuado, ejemplo: 12:30 o 5:00" ValidationExpression="^(1[0-2]|[1-9]):[0-5][0-9]$" EnableClientScript="False" ForeColor="Red"></asp:RegularExpressionValidator>
@@ -85,6 +86,7 @@
                     <td><asp:DropDownList ID="ddlAmPm2" runat="server">
                        <asp:ListItem Selected="True">AM</asp:ListItem>
                        <asp:ListItem Selected="False">PM</asp:ListItem>
+                       <asp:ListItem Selected="False">MD</asp:ListItem>
                     </asp:DropDownList></td>
                     <td><asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txt_Fin" ErrorMessage="*"></asp:RequiredFieldValidator></td>
                     <td><asp:RegularExpressionValidator ID="TimeValidator2" runat="server" ControlToValidate="txt_Fin" Display="Dynamic" ErrorMessage="Hora inválida. Ingrese la hora en un formato adecuado, ejemplo: 12:30 o 5:00" ValidationExpression="^(1[0-2]|[1-9]):[0-5][0-9]$" EnableClientScript="False" ForeColor="Red"></asp:RegularExpressionValidator>

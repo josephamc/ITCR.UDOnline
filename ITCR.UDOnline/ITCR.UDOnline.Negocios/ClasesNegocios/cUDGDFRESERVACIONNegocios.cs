@@ -267,5 +267,18 @@ namespace ITCR.UDSystem.Negocios
             }
         }
 
+        public override int ConsultarDisponibilidadDia(DateTime p_fecinicio, int p_idInstalacion)
+        {
+            try
+            {
+                return base.ConsultarDisponibilidadDia(p_fecinicio, p_idInstalacion);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
 	} //class
 } //namespace

@@ -77,6 +77,21 @@ namespace ITCR.UDOnline.Interfaz.Solicitudes
         }
 
 
+        private int ValidarDiaInstalacion(DateTime p_fecinicio, DateTime p_fecfin, int p_idInstalacion, cUDGDFRESERVACIONNegocios Nueva_Consulta)
+        {
+            int retorno = -1000;
+            while (p_fecinicio <= p_fecfin)
+            {
+                retorno = Nueva_Consulta.ConsultarDisponibilidadDia(p_fecinicio, p_idInstalacion);
+                if (retorno == -1)
+                    break;
+                p_fecinicio=p_fecinicio.AddDays(1);
+            }
+
+            return retorno;
+        
+        }
+
 
 
         protected void boton_enviar_solicitud_Click(object sender, EventArgs e)
@@ -101,13 +116,25 @@ namespace ITCR.UDOnline.Interfaz.Solicitudes
                 bool email = false;
                 cUDGDFRESERVACIONNegocios Nueva_Consulta = new cUDGDFRESERVACIONNegocios(0, "", 0, "");
                 int iResultado = -1000;
+                int iResultadoDia = -1000;
                 string tiHRA_HORAINICIO = txt_Inicio.Text + ":00 " + ddlAmPm1.SelectedItem.Value.ToString();
                 string tiHRA_HORAFIN = txt_Fin.Text + ":00 " + ddlAmPm2.SelectedItem.Value.ToString();
+
+                if (ddlAmPm1.SelectedItem.Value.ToString() == "MD")
+                {
+                    tiHRA_HORAINICIO = txt_Inicio.Text + ":00 " + "PM";
+                }
+
+                if (ddlAmPm2.SelectedItem.Value.ToString() == "MD")
+                {
+                    tiHRA_HORAFIN = txt_Fin.Text + ":00 " + "PM";
+                }
                 validaFormulario(TextBox_responsable.Text.ToString(), TextBox_Solicitante.Text.ToString(), TextBox_identificacion.Text.ToString(), Int32.Parse(TextBox_cantidad.Text.ToString()), txt_razonUso.Value.ToString(), TextBox_correo.Text.ToString());
                 fecha = validaFechas(Convert.ToDateTime(txt_FechaInicio.Text.ToString()), Convert.ToDateTime(txt_FechaFin.Text.ToString()), DateTime.Parse(tiHRA_HORAINICIO), DateTime.Parse(tiHRA_HORAFIN));
                 iResultado = Nueva_Consulta.ConsultarDisponibilidad(Convert.ToDateTime(txt_FechaInicio.Text.ToString()), Convert.ToDateTime(txt_FechaFin.Text.ToString()), DateTime.Parse(tiHRA_HORAINICIO), DateTime.Parse(tiHRA_HORAFIN), iIDInstalacion);
                 email = EvaluateIsValid(TextBox_correo.Text.ToString());
-                if (iResultado == 1 && fecha==1 && email==true)
+                iResultadoDia = ValidarDiaInstalacion(Convert.ToDateTime(txt_FechaInicio.Text.ToString()), Convert.ToDateTime(txt_FechaFin.Text.ToString()), iIDInstalacion, Nueva_Consulta);
+                if (iResultado == 1 && fecha==1 && email==true && iResultadoDia==1)
                 {
                     cUDGDFSOLICITUDNegocios Nueva_Solicitud = new cUDGDFSOLICITUDNegocios(0, "", 0, "");
                     Nueva_Solicitud.FKY_INSTALACION = iIDInstalacion;
@@ -141,6 +168,10 @@ namespace ITCR.UDOnline.Interfaz.Solicitudes
 
                     if (email == false) {
                         Response.Redirect("/frmErrorEmail.aspx", true);
+                    }
+
+                    if (iResultadoDia == -1) {
+                        Response.Redirect("/frmErrorDia.aspx", true);
                     }
 
                     else
