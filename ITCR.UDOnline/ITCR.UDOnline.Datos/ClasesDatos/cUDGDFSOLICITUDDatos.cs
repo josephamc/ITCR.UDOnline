@@ -50,7 +50,6 @@ namespace ITCR.UDSystem.Datos
 		///		 <LI>NOM_ENCARGADO</LI>
 		///		 <LI>NOM_INSTITUCION</LI>
 		///		 <LI>COD_IDENTIFICACION</LI>
-		///		 <LI>CAN_USUARIOS</LI>
 		///		 <LI>FKY_TIPOSOLICITANTE</LI>
 		///		 <LI>TXT_OBSERVACIONES. May be SqlString.Null</LI>
 		///		 <LI>DSC_RAZONUSO</LI>
@@ -58,6 +57,8 @@ namespace ITCR.UDSystem.Datos
 		///		 <LI>TXT_CORREO</LI>
 		///		 <LI>COD_ATENDIDO</LI>
 		///		 <LI>TXT_USUARIOS</LI>
+        ///		 <LI>CAN_USUARIOSH</LI>
+        ///		 <LI>CAN_USUARIOSM</LI>
 		/// </UL>
 		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
 		/// <UL>
@@ -88,7 +89,6 @@ namespace ITCR.UDSystem.Datos
 		///		 <LI>NOM_ENCARGADO</LI>
 		///		 <LI>NOM_INSTITUCION</LI>
 		///		 <LI>COD_IDENTIFICACION</LI>
-		///		 <LI>CAN_USUARIOS</LI>
 		///		 <LI>FKY_TIPOSOLICITANTE</LI>
 		///		 <LI>TXT_OBSERVACIONES. May be SqlString.Null</LI>
 		///		 <LI>DSC_RAZONUSO</LI>
@@ -96,6 +96,8 @@ namespace ITCR.UDSystem.Datos
 		///		 <LI>TXT_CORREO</LI>
 		///		 <LI>COD_ATENDIDO</LI>
 		///		 <LI>TXT_USUARIOS</LI>
+        ///		 <LI>CAN_USUARIOSH</LI>
+        ///		 <LI>CAN_USUARIOSM</LI>	 
 		/// </UL>
 		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
 		/// <UL>
@@ -150,7 +152,6 @@ namespace ITCR.UDSystem.Datos
 		///		 <LI>NOM_ENCARGADO</LI>
 		///		 <LI>NOM_INSTITUCION</LI>
 		///		 <LI>COD_IDENTIFICACION</LI>
-		///		 <LI>CAN_USUARIOS</LI>
 		///		 <LI>FKY_TIPOSOLICITANTE</LI>
 		///		 <LI>TXT_OBSERVACIONES</LI>
 		///		 <LI>DSC_RAZONUSO</LI>
@@ -158,6 +159,8 @@ namespace ITCR.UDSystem.Datos
 		///		 <LI>TXT_CORREO</LI>
 		///		 <LI>COD_ATENDIDO</LI>
 		///		 <LI>TXT_USUARIOS</LI>
+        ///		 <LI>CAN_USUARIOSH</LI>
+        ///		 <LI>CAN_USUARIOSM</LI>
 		/// </UL>
 		/// Llena todas las propiedades que corresponden al campo en tabla con el valor de la fila seleccionada.
 		/// </remarks>
@@ -200,7 +203,6 @@ namespace ITCR.UDSystem.Datos
 		///		 <LI>NOM_ENCARGADO</LI>
 		///		 <LI>NOM_INSTITUCION</LI>
 		///		 <LI>COD_IDENTIFICACION</LI>
-		///		 <LI>CAN_USUARIOS</LI>
 		///		 <LI>FKY_TIPOSOLICITANTE</LI>
 		///		 <LI>TXT_OBSERVACIONES. May be SqlString.Null</LI>
 		///		 <LI>DSC_RAZONUSO</LI>
@@ -208,6 +210,8 @@ namespace ITCR.UDSystem.Datos
 		///		 <LI>TXT_CORREO</LI>
 		///		 <LI>COD_ATENDIDO</LI>
 		///		 <LI>TXT_USUARIOS</LI>
+        ///		 <LI>CAN_USUARIOSH</LI>
+        ///		 <LI>CAN_USUARIOSM</LI>		 
 		/// </UL>
 		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
 		/// <UL>

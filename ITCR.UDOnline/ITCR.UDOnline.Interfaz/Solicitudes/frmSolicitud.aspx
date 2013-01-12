@@ -155,11 +155,22 @@
             
             <tr>
                 <td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                <td><asp:Label ID="lb_cantidad" runat="server" Text="Cantidad de Usuarios:" 
+                <td><asp:Label ID="lb_cantidadh" runat="server" Text="Cantidad de Usuarios Masculinos:" 
                         style="font-weight: 700"></asp:Label></td>
-                  <td><asp:TextBox ID="TextBox_cantidad" runat="server" Width="227px"></asp:TextBox> </td>
-               <td><asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="TextBox_cantidad" ErrorMessage="*"></asp:RequiredFieldValidator></td>
-                    <td><asp:RegularExpressionValidator ID="NumberValidator" runat="server" ControlToValidate="TextBox_cantidad" Display="Dynamic" ErrorMessage="Número inválido. Ingrese un número válido, ejemplo: 7" ValidationExpression="^\d+$" EnableClientScript="False" ForeColor="Red"></asp:RegularExpressionValidator>
+                  <td><asp:TextBox ID="TextBox_cantidadh" runat="server" Width="227px"></asp:TextBox> </td>
+               <td><asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="TextBox_cantidadh" ErrorMessage="*"></asp:RequiredFieldValidator></td>
+                    <td><asp:RegularExpressionValidator ID="NumberValidatorh" runat="server" ControlToValidate="TextBox_cantidadh" Display="Dynamic" ErrorMessage="Número inválido. Ingrese un número válido, ejemplo: 7" ValidationExpression="^\d+$" EnableClientScript="False" ForeColor="Red"></asp:RegularExpressionValidator>
+                        </td>
+                        
+            </tr>
+
+             <tr>
+                <td> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                <td><asp:Label ID="lb_cantidadm" runat="server" Text="Cantidad de Usuarios Femeninos:" 
+                        style="font-weight: 700"></asp:Label></td>
+                  <td><asp:TextBox ID="TextBox_cantidadm" runat="server" Width="227px"></asp:TextBox> </td>
+               <td><asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="TextBox_cantidadm" ErrorMessage="*"></asp:RequiredFieldValidator></td>
+                    <td><asp:RegularExpressionValidator ID="NumberValidatorm" runat="server" ControlToValidate="TextBox_cantidadm" Display="Dynamic" ErrorMessage="Número inválido. Ingrese un número válido, ejemplo: 7" ValidationExpression="^\d+$" EnableClientScript="False" ForeColor="Red"></asp:RegularExpressionValidator>
                         </td>
                         
             </tr>

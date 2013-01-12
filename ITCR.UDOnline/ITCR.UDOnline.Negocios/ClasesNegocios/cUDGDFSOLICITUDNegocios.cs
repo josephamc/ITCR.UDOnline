@@ -59,7 +59,6 @@ namespace ITCR.UDSystem.Negocios
 		///		 <LI>NOM_ENCARGADO</LI>
 		///		 <LI>NOM_INSTITUCION</LI>
 		///		 <LI>COD_IDENTIFICACION</LI>
-		///		 <LI>CAN_USUARIOS</LI>
 		///		 <LI>FKY_TIPOSOLICITANTE</LI>
 		///		 <LI>TXT_OBSERVACIONES. May be SqlString.Null</LI>
 		///		 <LI>DSC_RAZONUSO</LI>
@@ -67,6 +66,8 @@ namespace ITCR.UDSystem.Negocios
 		///		 <LI>TXT_CORREO</LI>
 		///		 <LI>COD_ATENDIDO</LI>
 		///		 <LI>TXT_USUARIOS</LI>
+        ///		 <LI>CAN_USUARIOSH</LI>
+        ///		 <LI>CAN_USUARIOSM</LI>
 		/// </UL>
 		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
 		/// <UL>
@@ -81,24 +82,25 @@ namespace ITCR.UDSystem.Negocios
 			try
 			{
 				//Construir aqui el string a guardar en la bitacora.
-				operacion = "Insertar cUDGDFSOLICITUD;"
-					+"FKY_INSTALACION:"+FKY_INSTALACION.ToString()+";"
-					+"FEC_INICIO:"+FEC_INICIO.ToString()+";"
-					+"FEC_FIN:"+FEC_FIN.ToString()+";"
-					+"FEC_SOLICITUD:"+FEC_SOLICITUD.ToString()+";"
-					+"HRA_INICIO:"+HRA_INICIO.ToString()+";"
-					+"HRA_FIN:"+HRA_FIN.ToString()+";"
-					+"NOM_ENCARGADO:"+NOM_ENCARGADO.ToString()+";"
-					+"NOM_INSTITUCION:"+NOM_INSTITUCION.ToString()+";"
-					+"COD_IDENTIFICACION:"+COD_IDENTIFICACION.ToString()+";"
-					+"CAN_USUARIOS:"+CAN_USUARIOS.ToString()+";"
-					+"FKY_TIPOSOLICITANTE:"+FKY_TIPOSOLICITANTE.ToString()+";"
-					+"TXT_OBSERVACIONES:"+TXT_OBSERVACIONES.ToString()+";"
-					+"DSC_RAZONUSO:"+DSC_RAZONUSO.ToString()+";"
-					+"COD_TIPOSOLICITUD:"+COD_TIPOSOLICITUD.ToString()+";"
-					+"TXT_CORREO:"+TXT_CORREO.ToString()+";"
-					+"COD_ATENDIDO:"+COD_ATENDIDO.ToString()+";"
-					+"TXT_USUARIOS:"+TXT_USUARIOS.ToString()+";";
+                operacion = "Insertar cUDGDFSOLICITUD;"
+                    + "FKY_INSTALACION:" + FKY_INSTALACION.ToString() + ";"
+                    + "FEC_INICIO:" + FEC_INICIO.ToString() + ";"
+                    + "FEC_FIN:" + FEC_FIN.ToString() + ";"
+                    + "FEC_SOLICITUD:" + FEC_SOLICITUD.ToString() + ";"
+                    + "HRA_INICIO:" + HRA_INICIO.ToString() + ";"
+                    + "HRA_FIN:" + HRA_FIN.ToString() + ";"
+                    + "NOM_ENCARGADO:" + NOM_ENCARGADO.ToString() + ";"
+                    + "NOM_INSTITUCION:" + NOM_INSTITUCION.ToString() + ";"
+                    + "COD_IDENTIFICACION:" + COD_IDENTIFICACION.ToString() + ";"
+                    + "FKY_TIPOSOLICITANTE:" + FKY_TIPOSOLICITANTE.ToString() + ";"
+                    + "TXT_OBSERVACIONES:" + TXT_OBSERVACIONES.ToString() + ";"
+                    + "DSC_RAZONUSO:" + DSC_RAZONUSO.ToString() + ";"
+                    + "COD_TIPOSOLICITUD:" + COD_TIPOSOLICITUD.ToString() + ";"
+                    + "TXT_CORREO:" + TXT_CORREO.ToString() + ";"
+                    + "COD_ATENDIDO:" + COD_ATENDIDO.ToString() + ";"
+                    + "TXT_USUARIOS:" + TXT_USUARIOS.ToString() + ";"
+                    + "CAN_USUARIOSH:" + CAN_USUARIOSH.ToString() + ";"
+                    + "CAN_USUARIOSM:" + CAN_USUARIOSM.ToString() + ";";
 				//wsseg.BitacoraRegistrarUso(_COD_APLICACIONBitacora, _COD_FUNCIONALIDADBitacora, _COD_SEDEBitacora, eTipoEventoBitacora.UsoFuncionalidad, _ID_USUARIOBitacora,operacion);
 				return base.Insertar();
 			}
@@ -129,7 +131,6 @@ namespace ITCR.UDSystem.Negocios
 		///		 <LI>NOM_ENCARGADO</LI>
 		///		 <LI>NOM_INSTITUCION</LI>
 		///		 <LI>COD_IDENTIFICACION</LI>
-		///		 <LI>CAN_USUARIOS</LI>
 		///		 <LI>FKY_TIPOSOLICITANTE</LI>
 		///		 <LI>TXT_OBSERVACIONES. May be SqlString.Null</LI>
 		///		 <LI>DSC_RAZONUSO</LI>
@@ -137,6 +138,8 @@ namespace ITCR.UDSystem.Negocios
 		///		 <LI>TXT_CORREO</LI>
 		///		 <LI>COD_ATENDIDO</LI>
 		///		 <LI>TXT_USUARIOS</LI>
+        ///		 <LI>CAN_USUARIOSH</LI>
+        ///		 <LI>CAN_USUARIOSM</LI>
 		/// </UL>
 		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
 		/// <UL>
@@ -161,14 +164,15 @@ namespace ITCR.UDSystem.Negocios
 					+"NOM_ENCARGADO:"+NOM_ENCARGADO.ToString()+";"
 					+"NOM_INSTITUCION:"+NOM_INSTITUCION.ToString()+";"
 					+"COD_IDENTIFICACION:"+COD_IDENTIFICACION.ToString()+";"
-					+"CAN_USUARIOS:"+CAN_USUARIOS.ToString()+";"
 					+"FKY_TIPOSOLICITANTE:"+FKY_TIPOSOLICITANTE.ToString()+";"
 					+"TXT_OBSERVACIONES:"+TXT_OBSERVACIONES.ToString()+";"
 					+"DSC_RAZONUSO:"+DSC_RAZONUSO.ToString()+";"
 					+"COD_TIPOSOLICITUD:"+COD_TIPOSOLICITUD.ToString()+";"
 					+"TXT_CORREO:"+TXT_CORREO.ToString()+";"
 					+"COD_ATENDIDO:"+COD_ATENDIDO.ToString()+";"
-					+"TXT_USUARIOS:"+TXT_USUARIOS.ToString()+";";
+					+"TXT_USUARIOS:"+TXT_USUARIOS.ToString()+";"
+                    + "CAN_USUARIOSH:" + CAN_USUARIOSH.ToString() + ";"
+                    + "CAN_USUARIOSM:" + CAN_USUARIOSM.ToString() + ";"; ;
 				//wsseg.BitacoraRegistrarUso(_COD_APLICACIONBitacora, _COD_FUNCIONALIDADBitacora, _COD_SEDEBitacora, eTipoEventoBitacora.UsoFuncionalidad, _ID_USUARIOBitacora,operacion);
 				return base.Actualizar();
 			}
@@ -240,7 +244,6 @@ namespace ITCR.UDSystem.Negocios
 		///		 <LI>NOM_ENCARGADO</LI>
 		///		 <LI>NOM_INSTITUCION</LI>
 		///		 <LI>COD_IDENTIFICACION</LI>
-		///		 <LI>CAN_USUARIOS</LI>
 		///		 <LI>FKY_TIPOSOLICITANTE</LI>
 		///		 <LI>TXT_OBSERVACIONES</LI>
 		///		 <LI>DSC_RAZONUSO</LI>
@@ -248,6 +251,8 @@ namespace ITCR.UDSystem.Negocios
 		///		 <LI>TXT_CORREO</LI>
 		///		 <LI>COD_ATENDIDO</LI>
 		///		 <LI>TXT_USUARIOS</LI>
+        ///		 <LI>CAN_USUARIOSH</LI>
+        ///		 <LI>CAN_USUARIOSM</LI>
 		/// </UL>
 		/// Llena todas las propiedades que corresponden al campo en tabla con el valor de la fila seleccionada.
 		/// </remarks>
@@ -304,7 +309,6 @@ namespace ITCR.UDSystem.Negocios
 		///		 <LI>NOM_ENCARGADO</LI>
 		///		 <LI>NOM_INSTITUCION</LI>
 		///		 <LI>COD_IDENTIFICACION</LI>
-		///		 <LI>CAN_USUARIOS</LI>
 		///		 <LI>FKY_TIPOSOLICITANTE</LI>
 		///		 <LI>TXT_OBSERVACIONES. May be SqlString.Null</LI>
 		///		 <LI>DSC_RAZONUSO</LI>
@@ -312,6 +316,8 @@ namespace ITCR.UDSystem.Negocios
 		///		 <LI>TXT_CORREO</LI>
 		///		 <LI>COD_ATENDIDO</LI>
 		///		 <LI>TXT_USUARIOS</LI>
+        ///		 <LI>CAN_USUARIOSH</LI>
+        ///		 <LI>CAN_USUARIOSM</LI>
 		/// </UL>
 		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
 		/// <UL>

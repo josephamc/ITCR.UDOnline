@@ -26,7 +26,7 @@ namespace ITCR.UDSystem.Base
 		#region Declaraciones de miembros de la clase
 			private SqlBoolean		_cOD_ATENDIDO;
 			private SqlDateTime		_fEC_INICIO, _fEC_FIN, _fEC_SOLICITUD;
-			private SqlInt32		_iD_SOLICITUD, _fKY_INSTALACION, _fKY_INSTALACIONOld, _cAN_USUARIOS, _fKY_TIPOSOLICITANTE, _fKY_TIPOSOLICITANTEOld;
+            private SqlInt32 _iD_SOLICITUD, _fKY_INSTALACION, _fKY_INSTALACIONOld, _cAN_USUARIOSH, _cAN_USUARIOSM, _fKY_TIPOSOLICITANTE, _fKY_TIPOSOLICITANTEOld;
 			private SqlDateTime		_hRA_INICIO, _hRA_FIN;
 			private SqlString		_tXT_CORREO, _cOD_TIPOSOLICITUD, _dSC_RAZONUSO, _nOM_INSTITUCION, _cOD_IDENTIFICACION, _nOM_ENCARGADO, _tXT_OBSERVACIONES, _tXT_USUARIOS;
 		#endregion
@@ -57,7 +57,6 @@ namespace ITCR.UDSystem.Base
 		///		 <LI>NOM_ENCARGADO</LI>
 		///		 <LI>NOM_INSTITUCION</LI>
 		///		 <LI>COD_IDENTIFICACION</LI>
-		///		 <LI>CAN_USUARIOS</LI>
 		///		 <LI>FKY_TIPOSOLICITANTE</LI>
 		///		 <LI>TXT_OBSERVACIONES. May be SqlString.Null</LI>
 		///		 <LI>DSC_RAZONUSO</LI>
@@ -65,6 +64,8 @@ namespace ITCR.UDSystem.Base
 		///		 <LI>TXT_CORREO</LI>
 		///		 <LI>COD_ATENDIDO</LI>
 		///		 <LI>TXT_USUARIOS</LI>
+        ///		 <LI>CAN_USUARIOSH</LI>
+        ///		 <LI>CAN_USUARIOSM</LI>
 		/// </UL>
 		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
 		/// <UL>
@@ -92,7 +93,6 @@ namespace ITCR.UDSystem.Base
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@sNOM_ENCARGADO", SqlDbType.VarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _nOM_ENCARGADO));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@sNOM_INSTITUCION", SqlDbType.VarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _nOM_INSTITUCION));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@sCOD_IDENTIFICACION", SqlDbType.VarChar, 20, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _cOD_IDENTIFICACION));
-				cmdAEjecutar.Parameters.Add(new SqlParameter("@iCAN_USUARIOS", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _cAN_USUARIOS));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@iFKY_TIPOSOLICITANTE", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fKY_TIPOSOLICITANTE));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@sTXT_OBSERVACIONES", SqlDbType.VarChar, 300, ParameterDirection.Input, true, 0, 0, "", DataRowVersion.Proposed, _tXT_OBSERVACIONES));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@sDSC_RAZONUSO", SqlDbType.VarChar, 100, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _dSC_RAZONUSO));
@@ -101,7 +101,10 @@ namespace ITCR.UDSystem.Base
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@bCOD_ATENDIDO", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _cOD_ATENDIDO));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@sTXT_USUARIOS", SqlDbType.VarChar, 500, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _tXT_USUARIOS));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@iID_SOLICITUD", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _iD_SOLICITUD));
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@iCAN_USUARIOSH", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _cAN_USUARIOSH));
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@iCAN_USUARIOSM", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _cAN_USUARIOSM));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@iCodError", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));
+
 
 				if(_conexionBDEsCreadaLocal)
 				{
@@ -163,7 +166,6 @@ namespace ITCR.UDSystem.Base
 		///		 <LI>NOM_ENCARGADO</LI>
 		///		 <LI>NOM_INSTITUCION</LI>
 		///		 <LI>COD_IDENTIFICACION</LI>
-		///		 <LI>CAN_USUARIOS</LI>
 		///		 <LI>FKY_TIPOSOLICITANTE</LI>
 		///		 <LI>TXT_OBSERVACIONES. May be SqlString.Null</LI>
 		///		 <LI>DSC_RAZONUSO</LI>
@@ -171,6 +173,8 @@ namespace ITCR.UDSystem.Base
 		///		 <LI>TXT_CORREO</LI>
 		///		 <LI>COD_ATENDIDO</LI>
 		///		 <LI>TXT_USUARIOS</LI>
+        ///		 <LI>CAN_USUARIOSH</LI>	
+        ///		 <LI>CAN_USUARIOSM</LI>	 
 		/// </UL>
 		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
 		/// <UL>
@@ -198,7 +202,6 @@ namespace ITCR.UDSystem.Base
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@sNOM_ENCARGADO", SqlDbType.VarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _nOM_ENCARGADO));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@sNOM_INSTITUCION", SqlDbType.VarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _nOM_INSTITUCION));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@sCOD_IDENTIFICACION", SqlDbType.VarChar, 20, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _cOD_IDENTIFICACION));
-				cmdAEjecutar.Parameters.Add(new SqlParameter("@iCAN_USUARIOS", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _cAN_USUARIOS));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@iFKY_TIPOSOLICITANTE", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fKY_TIPOSOLICITANTE));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@sTXT_OBSERVACIONES", SqlDbType.VarChar, 300, ParameterDirection.Input, true, 0, 0, "", DataRowVersion.Proposed, _tXT_OBSERVACIONES));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@sDSC_RAZONUSO", SqlDbType.VarChar, 100, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _dSC_RAZONUSO));
@@ -206,6 +209,8 @@ namespace ITCR.UDSystem.Base
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@sTXT_CORREO", SqlDbType.VarChar, 75, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _tXT_CORREO));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@bCOD_ATENDIDO", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _cOD_ATENDIDO));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@sTXT_USUARIOS", SqlDbType.VarChar, 500, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _tXT_USUARIOS));
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@iCAN_USUARIOSH", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _cAN_USUARIOSH));
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@iCAN_USUARIOSM", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _cAN_USUARIOSM));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@iCodError", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));
 
 				if(_conexionBDEsCreadaLocal)
@@ -632,7 +637,6 @@ namespace ITCR.UDSystem.Base
 		///		 <LI>NOM_ENCARGADO</LI>
 		///		 <LI>NOM_INSTITUCION</LI>
 		///		 <LI>COD_IDENTIFICACION</LI>
-		///		 <LI>CAN_USUARIOS</LI>
 		///		 <LI>FKY_TIPOSOLICITANTE</LI>
 		///		 <LI>TXT_OBSERVACIONES</LI>
 		///		 <LI>DSC_RAZONUSO</LI>
@@ -640,6 +644,8 @@ namespace ITCR.UDSystem.Base
 		///		 <LI>TXT_CORREO</LI>
 		///		 <LI>COD_ATENDIDO</LI>
 		///		 <LI>TXT_USUARIOS</LI>
+        ///		 <LI>CAN_USUARIOSH</LI>		
+        ///		 <LI>CAN_USUARIOSM</LI>	 
 		/// </UL>
 		/// Llena todas las propiedades que corresponden al campo en tabla con el valor de la fila seleccionada.
 		/// </remarks>
@@ -694,7 +700,6 @@ namespace ITCR.UDSystem.Base
 					_nOM_ENCARGADO = (string)toReturn.Rows[0]["NOM_ENCARGADO"];
 					_nOM_INSTITUCION = (string)toReturn.Rows[0]["NOM_INSTITUCION"];
 					_cOD_IDENTIFICACION = (string)toReturn.Rows[0]["COD_IDENTIFICACION"];
-					_cAN_USUARIOS = (Int32)toReturn.Rows[0]["CAN_USUARIOS"];
 					_fKY_TIPOSOLICITANTE = (Int32)toReturn.Rows[0]["FKY_TIPOSOLICITANTE"];
 					_tXT_OBSERVACIONES = toReturn.Rows[0]["TXT_OBSERVACIONES"] == System.DBNull.Value ? SqlString.Null : (string)toReturn.Rows[0]["TXT_OBSERVACIONES"];
 					_dSC_RAZONUSO = (string)toReturn.Rows[0]["DSC_RAZONUSO"];
@@ -702,6 +707,8 @@ namespace ITCR.UDSystem.Base
 					_tXT_CORREO = (string)toReturn.Rows[0]["TXT_CORREO"];
 					_cOD_ATENDIDO = (bool)toReturn.Rows[0]["COD_ATENDIDO"];
 					_tXT_USUARIOS = (string)toReturn.Rows[0]["TXT_USUARIOS"];
+                    _cAN_USUARIOSH = (Int32)toReturn.Rows[0]["CAN_USUARIOSH"];
+                    _cAN_USUARIOSM = (Int32)toReturn.Rows[0]["CAN_USUARIOSM"];
 				}
 				return toReturn;
 			}
@@ -954,7 +961,6 @@ namespace ITCR.UDSystem.Base
 		///		 <LI>NOM_ENCARGADO</LI>
 		///		 <LI>NOM_INSTITUCION</LI>
 		///		 <LI>COD_IDENTIFICACION</LI>
-		///		 <LI>CAN_USUARIOS</LI>
 		///		 <LI>FKY_TIPOSOLICITANTE</LI>
 		///		 <LI>TXT_OBSERVACIONES. May be SqlString.Null</LI>
 		///		 <LI>DSC_RAZONUSO</LI>
@@ -962,6 +968,8 @@ namespace ITCR.UDSystem.Base
 		///		 <LI>TXT_CORREO</LI>
 		///		 <LI>COD_ATENDIDO</LI>
 		///		 <LI>TXT_USUARIOS</LI>
+        ///		 <LI>CAN_USUARIOSH</LI>
+        ///		 <LI>CAN_USUARIOSM</LI>	 
 		/// </UL>
 		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
 		/// <UL>
@@ -991,7 +999,6 @@ namespace ITCR.UDSystem.Base
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@sNOM_ENCARGADO", SqlDbType.VarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _nOM_ENCARGADO));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@sNOM_INSTITUCION", SqlDbType.VarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _nOM_INSTITUCION));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@sCOD_IDENTIFICACION", SqlDbType.VarChar, 20, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _cOD_IDENTIFICACION));
-				cmdAEjecutar.Parameters.Add(new SqlParameter("@iCAN_USUARIOS", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _cAN_USUARIOS));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@iFKY_TIPOSOLICITANTE", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fKY_TIPOSOLICITANTE));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@sTXT_OBSERVACIONES", SqlDbType.VarChar, 300, ParameterDirection.Input, true, 0, 0, "", DataRowVersion.Proposed, _tXT_OBSERVACIONES));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@sDSC_RAZONUSO", SqlDbType.VarChar, 100, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _dSC_RAZONUSO));
@@ -999,6 +1006,8 @@ namespace ITCR.UDSystem.Base
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@sTXT_CORREO", SqlDbType.VarChar, 75, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _tXT_CORREO));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@bCOD_ATENDIDO", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _cOD_ATENDIDO));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@sTXT_USUARIOS", SqlDbType.VarChar, 500, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _tXT_USUARIOS));
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@iCAN_USUARIOSH", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _cAN_USUARIOSH));
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@iCAN_USUARIOSM", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _cAN_USUARIOSM));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@iCodError", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));
 
 				if(_conexionBDEsCreadaLocal)
@@ -1241,22 +1250,39 @@ namespace ITCR.UDSystem.Base
 		}
 
 
-		public SqlInt32 CAN_USUARIOS
+		public SqlInt32 CAN_USUARIOSH
 		{
 			get
 			{
-				return _cAN_USUARIOS;
+				return _cAN_USUARIOSH;
 			}
 			set
 			{
-				SqlInt32 cAN_USUARIOSTmp = (SqlInt32)value;
-				if(cAN_USUARIOSTmp.IsNull)
+				SqlInt32 cAN_USUARIOSHTmp = (SqlInt32)value;
+				if(cAN_USUARIOSHTmp.IsNull)
 				{
-					throw new ArgumentOutOfRangeException("CAN_USUARIOS", "CAN_USUARIOS can't be NULL");
+					throw new ArgumentOutOfRangeException("CAN_USUARIOSH", "CAN_USUARIOSH can't be NULL");
 				}
-				_cAN_USUARIOS = value;
+				_cAN_USUARIOSH = value;
 			}
 		}
+
+        public SqlInt32 CAN_USUARIOSM
+        {
+            get
+            {
+                return _cAN_USUARIOSM;
+            }
+            set
+            {
+                SqlInt32 cAN_USUARIOSMTmp = (SqlInt32)value;
+                if (cAN_USUARIOSMTmp.IsNull)
+                {
+                    throw new ArgumentOutOfRangeException("CAN_USUARIOSM", "CAN_USUARIOSM can't be NULL");
+                }
+                _cAN_USUARIOSM = value;
+            }
+        }
 
 
 		public SqlInt32 FKY_TIPOSOLICITANTE

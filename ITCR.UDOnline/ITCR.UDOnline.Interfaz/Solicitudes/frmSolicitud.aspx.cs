@@ -36,30 +36,42 @@ namespace ITCR.UDOnline.Interfaz.Solicitudes
             catch (Exception) { }
         }
 
-        private void validaFormulario(string responsable, string solicitante, string identificacion, int cantidad, string razonUso, string correo)
+        private void validaFormulario(string responsable, string solicitante, string identificacion, int cantidadh, int cantidadm, string razonUso, string correo)
         {
 
             string prueba = responsable + solicitante + identificacion + razonUso + correo;
-            int can = cantidad + 0;
+            int can = cantidadh + cantidadm;
 
         }
 
 
+       
+
+
         private int validaFechas(DateTime FechaInicio, DateTime FechaFin, DateTime HoraInicio, DateTime HoraFin) {
 
-            if (FechaInicio == FechaFin) {
-                if (HoraInicio >= HoraFin)
+            DateTime hoy = DateTime.Now;
+
+            if (FechaInicio >= hoy) // aqui valido que no ingresen fechas menores al dia que se hace la solicitud
+            {
+
+                if (FechaInicio == FechaFin)
+                {
+                    if (HoraInicio >= HoraFin)
+                        return -1;
+                    else
+                        return 1;
+                }
+
+                if (FechaInicio > FechaFin)
+
                     return -1;
+
                 else
                     return 1;
             }
-
-            if (FechaInicio > FechaFin)
-            
-                return -1;
-
             else
-                return 1;
+                return -1;
         }
 
 
@@ -93,6 +105,9 @@ namespace ITCR.UDOnline.Interfaz.Solicitudes
         }
 
 
+     
+
+
 
         protected void boton_enviar_solicitud_Click(object sender, EventArgs e)
         {
@@ -101,14 +116,15 @@ namespace ITCR.UDOnline.Interfaz.Solicitudes
             DateValidator1.Visible = false;
             DateValidator2.Visible = false;
             EmailValidator.Visible = false;
-            NumberValidator.Visible = false;
+            NumberValidatorh.Visible = false;
+            NumberValidatorm.Visible = false;
             InvolucradasValidator.Visible = false;
             ValidaSolicitante.Visible = false;
             ValidaResponsable.Visible = false;
             ValidaIdentificacion.Visible = false;
             ValidaRazonUso.Visible = false;
             InvolucradasValidator.Visible = false;
-
+            
             try
             {
                 
@@ -129,7 +145,7 @@ namespace ITCR.UDOnline.Interfaz.Solicitudes
                 {
                     tiHRA_HORAFIN = txt_Fin.Text + ":00 " + "PM";
                 }
-                validaFormulario(TextBox_responsable.Text.ToString(), TextBox_Solicitante.Text.ToString(), TextBox_identificacion.Text.ToString(), Int32.Parse(TextBox_cantidad.Text.ToString()), txt_razonUso.Value.ToString(), TextBox_correo.Text.ToString());
+                validaFormulario(TextBox_responsable.Text.ToString(), TextBox_Solicitante.Text.ToString(), TextBox_identificacion.Text.ToString(), Int32.Parse(TextBox_cantidadh.Text.ToString()), Int32.Parse(TextBox_cantidadm.Text.ToString()),  txt_razonUso.Value.ToString(), TextBox_correo.Text.ToString());
                 fecha = validaFechas(Convert.ToDateTime(txt_FechaInicio.Text.ToString()), Convert.ToDateTime(txt_FechaFin.Text.ToString()), DateTime.Parse(tiHRA_HORAINICIO), DateTime.Parse(tiHRA_HORAFIN));
                 iResultado = Nueva_Consulta.ConsultarDisponibilidad(Convert.ToDateTime(txt_FechaInicio.Text.ToString()), Convert.ToDateTime(txt_FechaFin.Text.ToString()), DateTime.Parse(tiHRA_HORAINICIO), DateTime.Parse(tiHRA_HORAFIN), iIDInstalacion);
                 email = EvaluateIsValid(TextBox_correo.Text.ToString());
@@ -146,7 +162,8 @@ namespace ITCR.UDOnline.Interfaz.Solicitudes
                     Nueva_Solicitud.NOM_ENCARGADO = TextBox_responsable.Text.ToString();
                     Nueva_Solicitud.NOM_INSTITUCION = TextBox_Solicitante.Text.ToString();
                     Nueva_Solicitud.COD_IDENTIFICACION = TextBox_identificacion.Text.ToString();
-                    Nueva_Solicitud.CAN_USUARIOS = Int32.Parse(TextBox_cantidad.Text.ToString());
+                    Nueva_Solicitud.CAN_USUARIOSH = Int32.Parse(TextBox_cantidadh.Text.ToString());
+                    Nueva_Solicitud.CAN_USUARIOSM = Int32.Parse(TextBox_cantidadm.Text.ToString());
                     cUDGDFTPSOLTNTENegocios Solicitante = new cUDGDFTPSOLTNTENegocios(0, "", 0, "");
                     Nueva_Solicitud.FKY_TIPOSOLICITANTE = Solicitante.BuscarID(DropDownList1.Text.ToString());
                     Nueva_Solicitud.TXT_OBSERVACIONES = null;
@@ -183,13 +200,15 @@ namespace ITCR.UDOnline.Interfaz.Solicitudes
             {
                   
             }
+     
 
             TimeValidator1.Visible = true;
             TimeValidator2.Visible = true;
             DateValidator1.Visible = true;
             DateValidator2.Visible = true;
             EmailValidator.Visible = true;
-            NumberValidator.Visible = true;
+            NumberValidatorh.Visible = true;
+            NumberValidatorm.Visible = true;
             InvolucradasValidator.Visible = true;
             ValidaSolicitante.Visible = true;
             ValidaResponsable.Visible = true;

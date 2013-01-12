@@ -337,22 +337,22 @@ namespace ITCR.UDOnline.Interfaz.Solicitudes {
         protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
         
         /// <summary>
-        /// lb_cantidad control.
+        /// lb_cantidadh control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lb_cantidad;
+        protected global::System.Web.UI.WebControls.Label lb_cantidadh;
         
         /// <summary>
-        /// TextBox_cantidad control.
+        /// TextBox_cantidadh control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_cantidad;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_cantidadh;
         
         /// <summary>
         /// RequiredFieldValidator6 control.
@@ -364,13 +364,49 @@ namespace ITCR.UDOnline.Interfaz.Solicitudes {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator6;
         
         /// <summary>
-        /// NumberValidator control.
+        /// NumberValidatorh control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator NumberValidator;
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator NumberValidatorh;
+        
+        /// <summary>
+        /// lb_cantidadm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lb_cantidadm;
+        
+        /// <summary>
+        /// TextBox_cantidadm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox_cantidadm;
+        
+        /// <summary>
+        /// RequiredFieldValidator12 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator12;
+        
+        /// <summary>
+        /// NumberValidatorm control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator NumberValidatorm;
         
         /// <summary>
         /// lb_uso control.
