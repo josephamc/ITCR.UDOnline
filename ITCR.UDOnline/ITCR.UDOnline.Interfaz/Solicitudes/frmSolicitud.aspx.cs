@@ -36,13 +36,7 @@ namespace ITCR.UDOnline.Interfaz.Solicitudes
             catch (Exception) { }
         }
 
-        private void validaFormulario(string responsable, string solicitante, string identificacion, int cantidadh, int cantidadm, string razonUso, string correo)
-        {
-
-            string prueba = responsable + solicitante + identificacion + razonUso + correo;
-            int can = cantidadh + cantidadm;
-
-        }
+       
 
 
        
@@ -76,18 +70,6 @@ namespace ITCR.UDOnline.Interfaz.Solicitudes
 
 
 
-        private bool EvaluateIsValid(string val)
-        {
-         
-            string pattern = @"^[a-z][a-z|0-9|]*([_][a-z|0-9]+)*([.][a-z|0-9]+([_][a-z|0-9]+)*)?@[a-z][a-z|0-9|]*\.([a-z][a-z|0-9]*(\.[a-z][a-z|0-9]*)?)$";
-            Match match = Regex.Match(val.Trim(), pattern, RegexOptions.IgnoreCase);
-
-            if (match.Success)
-                return true;
-            else
-                return false;
-        }
-
 
         private int ValidarDiaInstalacion(DateTime p_fecinicio, DateTime p_fecfin, int p_idInstalacion, cUDGDFRESERVACIONNegocios Nueva_Consulta)
         {
@@ -111,95 +93,85 @@ namespace ITCR.UDOnline.Interfaz.Solicitudes
 
         protected void boton_enviar_solicitud_Click(object sender, EventArgs e)
         {
-            TimeValidator1.Visible = false;
-            TimeValidator2.Visible = false;
-            DateValidator1.Visible = false;
-            DateValidator2.Visible = false;
-            EmailValidator.Visible = false;
-            NumberValidatorh.Visible = false;
-            NumberValidatorm.Visible = false;
-            InvolucradasValidator.Visible = false;
-            ValidaSolicitante.Visible = false;
-            ValidaResponsable.Visible = false;
-            ValidaIdentificacion.Visible = false;
-            ValidaRazonUso.Visible = false;
-            InvolucradasValidator.Visible = false;
-            
+
             try
             {
-                
-                int fecha = 0;
-                bool email = false;
-                cUDGDFRESERVACIONNegocios Nueva_Consulta = new cUDGDFRESERVACIONNegocios(0, "", 0, "");
-                int iResultado = -1000;
-                int iResultadoDia = -1000;
-                string tiHRA_HORAINICIO = txt_Inicio.Text + ":00 " + ddlAmPm1.SelectedItem.Value.ToString();
-                string tiHRA_HORAFIN = txt_Fin.Text + ":00 " + ddlAmPm2.SelectedItem.Value.ToString();
-
-                if (ddlAmPm1.SelectedItem.Value.ToString() == "MD")
+                if (Page.IsValid == true)
                 {
-                    tiHRA_HORAINICIO = txt_Inicio.Text + ":00 " + "PM";
-                }
 
-                if (ddlAmPm2.SelectedItem.Value.ToString() == "MD")
-                {
-                    tiHRA_HORAFIN = txt_Fin.Text + ":00 " + "PM";
-                }
-                validaFormulario(TextBox_responsable.Text.ToString(), TextBox_Solicitante.Text.ToString(), TextBox_identificacion.Text.ToString(), Int32.Parse(TextBox_cantidadh.Text.ToString()), Int32.Parse(TextBox_cantidadm.Text.ToString()),  txt_razonUso.Value.ToString(), TextBox_correo.Text.ToString());
-                fecha = validaFechas(Convert.ToDateTime(txt_FechaInicio.Text.ToString()), Convert.ToDateTime(txt_FechaFin.Text.ToString()), DateTime.Parse(tiHRA_HORAINICIO), DateTime.Parse(tiHRA_HORAFIN));
-                iResultado = Nueva_Consulta.ConsultarDisponibilidad(Convert.ToDateTime(txt_FechaInicio.Text.ToString()), Convert.ToDateTime(txt_FechaFin.Text.ToString()), DateTime.Parse(tiHRA_HORAINICIO), DateTime.Parse(tiHRA_HORAFIN), iIDInstalacion);
-                email = EvaluateIsValid(TextBox_correo.Text.ToString());
-                iResultadoDia = ValidarDiaInstalacion(Convert.ToDateTime(txt_FechaInicio.Text.ToString()), Convert.ToDateTime(txt_FechaFin.Text.ToString()), iIDInstalacion, Nueva_Consulta);
-                if (iResultado == 1 && fecha==1 && email==true && iResultadoDia==1)
-                {
-                    cUDGDFSOLICITUDNegocios Nueva_Solicitud = new cUDGDFSOLICITUDNegocios(0, "", 0, "");
-                    Nueva_Solicitud.FKY_INSTALACION = iIDInstalacion;
-                    Nueva_Solicitud.FEC_INICIO = Convert.ToDateTime(txt_FechaInicio.Text.ToString());
-                    Nueva_Solicitud.FEC_FIN = Convert.ToDateTime(txt_FechaFin.Text.ToString());
-                    Nueva_Solicitud.FEC_SOLICITUD = DateTime.Now;
-                    Nueva_Solicitud.HRA_INICIO = DateTime.Parse(tiHRA_HORAINICIO);
-                    Nueva_Solicitud.HRA_FIN = DateTime.Parse(tiHRA_HORAFIN);
-                    Nueva_Solicitud.NOM_ENCARGADO = TextBox_responsable.Text.ToString();
-                    Nueva_Solicitud.NOM_INSTITUCION = TextBox_Solicitante.Text.ToString();
-                    Nueva_Solicitud.COD_IDENTIFICACION = TextBox_identificacion.Text.ToString();
-                    Nueva_Solicitud.CAN_USUARIOSH = Int32.Parse(TextBox_cantidadh.Text.ToString());
-                    Nueva_Solicitud.CAN_USUARIOSM = Int32.Parse(TextBox_cantidadm.Text.ToString());
-                    cUDGDFTPSOLTNTENegocios Solicitante = new cUDGDFTPSOLTNTENegocios(0, "", 0, "");
-                    Nueva_Solicitud.FKY_TIPOSOLICITANTE = Solicitante.BuscarID(DropDownList1.Text.ToString());
-                    Nueva_Solicitud.TXT_OBSERVACIONES = null;
-                    Nueva_Solicitud.DSC_RAZONUSO = txt_razonUso.Value.ToString();
-                    Nueva_Solicitud.COD_TIPOSOLICITUD = DropDownList2.Text.ToString();
-                    Nueva_Solicitud.TXT_CORREO = TextBox_correo.Text.ToString();
-                    Nueva_Solicitud.COD_ATENDIDO = false;
-                    Nueva_Solicitud.TXT_USUARIOS = Textarea_involucradas.Value.ToString();
-                    Nueva_Solicitud.Insertar();
+                    int fecha = 0;
+                    cUDGDFRESERVACIONNegocios Nueva_Consulta = new cUDGDFRESERVACIONNegocios(0, "", 0, "");
+                    int iResultado = -1000;
+                    int iResultadoDia = -1000;
+                    string tiHRA_HORAINICIO = txt_Inicio.Text + ":00 " + ddlAmPm1.SelectedItem.Value.ToString();
+                    string tiHRA_HORAFIN = txt_Fin.Text + ":00 " + ddlAmPm2.SelectedItem.Value.ToString();
 
-                    Response.Redirect("/frmNotificacion.aspx?op=notCor", true);
+                    if (ddlAmPm1.SelectedItem.Value.ToString() == "MD")
+                    {
+                        tiHRA_HORAINICIO = txt_Inicio.Text + ":00 " + "PM";
+                    }
 
-                }
+                    if (ddlAmPm2.SelectedItem.Value.ToString() == "MD")
+                    {
+                        tiHRA_HORAFIN = txt_Fin.Text + ":00 " + "PM";
+                    }
+
+                    fecha = validaFechas(Convert.ToDateTime(txt_FechaInicio.Text.ToString()), Convert.ToDateTime(txt_FechaFin.Text.ToString()), DateTime.Parse(tiHRA_HORAINICIO), DateTime.Parse(tiHRA_HORAFIN));
+                    iResultado = Nueva_Consulta.ConsultarDisponibilidad(Convert.ToDateTime(txt_FechaInicio.Text.ToString()), Convert.ToDateTime(txt_FechaFin.Text.ToString()), DateTime.Parse(tiHRA_HORAINICIO), DateTime.Parse(tiHRA_HORAFIN), iIDInstalacion);
+
+                    iResultadoDia = ValidarDiaInstalacion(Convert.ToDateTime(txt_FechaInicio.Text.ToString()), Convert.ToDateTime(txt_FechaFin.Text.ToString()), iIDInstalacion, Nueva_Consulta);
+                    if (iResultado == 1 && iResultadoDia == 1 && fecha == 1)
+                    {
+                        cUDGDFSOLICITUDNegocios Nueva_Solicitud = new cUDGDFSOLICITUDNegocios(0, "", 0, "");
+                        Nueva_Solicitud.FKY_INSTALACION = iIDInstalacion;
+                        Nueva_Solicitud.FEC_INICIO = Convert.ToDateTime(txt_FechaInicio.Text.ToString());
+                        Nueva_Solicitud.FEC_FIN = Convert.ToDateTime(txt_FechaFin.Text.ToString());
+                        Nueva_Solicitud.FEC_SOLICITUD = DateTime.Now;
+                        Nueva_Solicitud.HRA_INICIO = DateTime.Parse(tiHRA_HORAINICIO);
+                        Nueva_Solicitud.HRA_FIN = DateTime.Parse(tiHRA_HORAFIN);
+                        Nueva_Solicitud.NOM_ENCARGADO = TextBox_responsable.Text.ToString();
+                        Nueva_Solicitud.NOM_INSTITUCION = TextBox_Solicitante.Text.ToString();
+                        Nueva_Solicitud.COD_IDENTIFICACION = TextBox_identificacion.Text.ToString();
+                        Nueva_Solicitud.CAN_USUARIOSH = Int32.Parse(TextBox_cantidadh.Text.ToString());
+                        Nueva_Solicitud.CAN_USUARIOSM = Int32.Parse(TextBox_cantidadm.Text.ToString());
+                        cUDGDFTPSOLTNTENegocios Solicitante = new cUDGDFTPSOLTNTENegocios(0, "", 0, "");
+                        Nueva_Solicitud.FKY_TIPOSOLICITANTE = Solicitante.BuscarID(DropDownList1.Text.ToString());
+                        Nueva_Solicitud.TXT_OBSERVACIONES = null;
+                        Nueva_Solicitud.DSC_RAZONUSO = txt_razonUso.Value.ToString();
+                        Nueva_Solicitud.COD_TIPOSOLICITUD = DropDownList2.Text.ToString();
+                        Nueva_Solicitud.TXT_CORREO = TextBox_correo.Text.ToString();
+                        Nueva_Solicitud.COD_ATENDIDO = false;
+                        Nueva_Solicitud.TXT_USUARIOS = Textarea_involucradas.Value.ToString();
+                        Nueva_Solicitud.Insertar();
+
+                        Response.Redirect("/frmNotificacion.aspx?op=notCor", true);
+
+                    }
+
+
+
+
+                    if (iResultadoDia == -1)
+                    {
+                        Response.Redirect("/frmErrorDia.aspx", true);
+                    }
 
                     if (fecha == -1)
                     {
                         Response.Redirect("/frmErrorFechas.aspx", true);
                     }
 
-                    if (email == false) {
-                        Response.Redirect("/frmErrorEmail.aspx", true);
-                    }
 
-                    if (iResultadoDia == -1) {
-                        Response.Redirect("/frmErrorDia.aspx", true);
-                    }
 
                     else
 
                         Response.Redirect("/frmError.aspx", true);
+                }
             }
-
             catch (Exception)
             {
-                  
-            }
+            } 
+            
      
 
             TimeValidator1.Visible = true;
