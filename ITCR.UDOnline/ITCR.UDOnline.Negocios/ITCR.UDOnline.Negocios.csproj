@@ -41,6 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="cInstalacion.cs" />
+    <Compile Include="ClasesNegocios\cCalendario.cs" />
+    <Compile Include="ClasesNegocios\cUDGDFAPROBACIONNegocios.cs" />
+    <Compile Include="ClasesNegocios\cUDGDFCURSONegocios.cs" />
+    <Compile Include="ClasesNegocios\cUDGDFEVENTONegocios.cs" />
     <Compile Include="ClasesNegocios\cUDGDFIMAGENNegocios.cs" />
     <Compile Include="ClasesNegocios\cUDGDFINSTALACIONNegocios.cs" />
     <Compile Include="ClasesNegocios\cUDGDFRESERVACIONNegocios.cs" />

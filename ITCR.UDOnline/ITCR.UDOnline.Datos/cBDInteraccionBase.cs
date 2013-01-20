@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 using System.Data.SqlTypes;
 //using Microsoft.SqlServer.Types;
 
-namespace ITCR.UDSystem.Base
+namespace ITCR.UDOnline.Base
 {
 	/// <summary>
 	/// Propósito: Enums de error usadas la biblioteca.

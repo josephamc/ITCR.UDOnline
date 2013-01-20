@@ -16,7 +16,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Collections;
 
-namespace ITCR.UDSystem.Base
+namespace ITCR.UDOnline.Base
 {
 	/// <summary>
 	/// Propósito: provee un objeto SqlConnection que puede ser compartido entre objetos de la capa de acceso a datos
