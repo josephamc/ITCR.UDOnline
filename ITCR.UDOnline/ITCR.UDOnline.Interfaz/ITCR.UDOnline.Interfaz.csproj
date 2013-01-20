@@ -36,6 +36,10 @@
     <Reference Include="AjaxControlToolkit">
       <HintPath>..\packages\AjaxControlToolkit.4.1.60919\lib\40\AjaxControlToolkit.dll</HintPath>
     </Reference>
+    <Reference Include="DayPilot, Version=3.1.230.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DayPilot.dll</HintPath>
+    </Reference>
     <Reference Include="HtmlAgilityPack">
       <HintPath>..\packages\AjaxControlToolkit.4.1.60919\lib\40\SanitizerProviders\HtmlAgilityPack.dll</HintPath>
     </Reference>
@@ -61,6 +65,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Calendario\frmCalendario.aspx" />
+    <Content Include="Calendario\frmCurso.aspx" />
+    <Content Include="Calendario\frmEvento.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="frmErrorDia.aspx" />
     <Content Include="frmErrorEmail.aspx" />
@@ -84,6 +91,7 @@
     <Content Include="images\InsIMG.JPG" />
     <Content Include="images\searchbg.png" />
     <Content Include="images\searchbtn.png" />
+    <Content Include="images\see_info.png" />
     <Content Include="images\Solicitar01.jpg" />
     <Content Include="images\solicitud.jpg" />
     <Content Include="images\tec-logo.png" />
@@ -113,6 +121,27 @@
     </Compile>
     <Compile Include="About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Calendario\frmCalendario.aspx.cs">
+      <DependentUpon>frmCalendario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Calendario\frmCalendario.aspx.designer.cs">
+      <DependentUpon>frmCalendario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Calendario\frmCurso.aspx.cs">
+      <DependentUpon>frmCurso.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Calendario\frmCurso.aspx.designer.cs">
+      <DependentUpon>frmCurso.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Calendario\frmEvento.aspx.cs">
+      <DependentUpon>frmEvento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Calendario\frmEvento.aspx.designer.cs">
+      <DependentUpon>frmEvento.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>

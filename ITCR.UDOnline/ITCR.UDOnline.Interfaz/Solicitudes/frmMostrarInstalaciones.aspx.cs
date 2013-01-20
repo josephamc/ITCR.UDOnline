@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using ITCR.UDSystem.Negocios;
 using System.Data;
 using ITCR.UDOnline.Negocios;
 

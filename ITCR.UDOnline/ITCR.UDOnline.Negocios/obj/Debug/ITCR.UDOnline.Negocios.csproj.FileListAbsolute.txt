@@ -5,3 +5,10 @@ C:\Users\CesarLeonardo\Documents\GitHub\ITCR.UDOnline\ITCR.UDOnline\ITCR.UDOnlin
 C:\Users\CesarLeonardo\Documents\GitHub\ITCR.UDOnline\ITCR.UDOnline\ITCR.UDOnline.Negocios\obj\Debug\ITCR.UDOnline.Negocios.csprojResolveAssemblyReference.cache
 C:\Users\CesarLeonardo\Documents\GitHub\ITCR.UDOnline\ITCR.UDOnline\ITCR.UDOnline.Negocios\obj\Debug\ITCR.UDOnline.Negocios.dll
 C:\Users\CesarLeonardo\Documents\GitHub\ITCR.UDOnline\ITCR.UDOnline\ITCR.UDOnline.Negocios\obj\Debug\ITCR.UDOnline.Negocios.pdb
+C:\Users\Joseph\Documents\GitHub\ITCR.UDOnline\ITCR.UDOnline\ITCR.UDOnline.Negocios\bin\Debug\ITCR.UDOnline.Negocios.dll
+C:\Users\Joseph\Documents\GitHub\ITCR.UDOnline\ITCR.UDOnline\ITCR.UDOnline.Negocios\bin\Debug\ITCR.UDOnline.Negocios.pdb
+C:\Users\Joseph\Documents\GitHub\ITCR.UDOnline\ITCR.UDOnline\ITCR.UDOnline.Negocios\bin\Debug\ITCR.UDOnline.Datos.dll
+C:\Users\Joseph\Documents\GitHub\ITCR.UDOnline\ITCR.UDOnline\ITCR.UDOnline.Negocios\bin\Debug\ITCR.UDOnline.Datos.pdb
+C:\Users\Joseph\Documents\GitHub\ITCR.UDOnline\ITCR.UDOnline\ITCR.UDOnline.Negocios\obj\Debug\ITCR.UDOnline.Negocios.csprojResolveAssemblyReference.cache
+C:\Users\Joseph\Documents\GitHub\ITCR.UDOnline\ITCR.UDOnline\ITCR.UDOnline.Negocios\obj\Debug\ITCR.UDOnline.Negocios.dll
+C:\Users\Joseph\Documents\GitHub\ITCR.UDOnline\ITCR.UDOnline\ITCR.UDOnline.Negocios\obj\Debug\ITCR.UDOnline.Negocios.pdb

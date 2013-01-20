@@ -20,17 +20,18 @@
        
        <p class="search">
         <label>SEARCH</label>
-        <asp:TextBox ID="txt_search" runat="server" CssClass="txt"></asp:TextBox>
+        <asp:TextBox ID="txt_search" runat="server" CssClass="txt" Width="135px"></asp:TextBox>
         <asp:Button ID="btn_Search" runat="server" Text="SEARCH" CssClass="btn" 
                onclick="btn_Search_Click" />
        </p>
         <h1 class="logo" style="position: relative"></h1>
         
-        <gl>
+        <ol>
          <li><a href="../Default.aspx">INICIO</a></li>
          <li><a href="../Solicitudes/frmMostrarInstalaciones.aspx?from=btn">INSTALACIONES</a></li>
+         <li><a href="../Calendario/frmCalendario.aspx">CALENDARIO</a></li>
          <li><a href="../Contact.aspx">CONTÁCTENOS</a></li>
-       </gl>
+       </ol>
 
        
       <ul class="slideshow">
@@ -39,7 +40,7 @@
         <li><img width="680" height="250" src="../../images/home3.jpg" alt="" /></li>
         <li><img width="680" height="250" src="../../images/home4.jpg" alt="" /></li>
         <li><img width="680" height="250" src="../../images/home5.jpg" alt="" /></li>
-        <li><img width="680" height="250" src="../../images/home6.jpg" alt="" /></li>
+        <li><img height="250" src="../../images/home6.jpg" alt="" /></li>
       </ul> 
 
        </div>
@@ -67,25 +68,16 @@
     <div id="foot">
      <div id="foot_cen">
      <h6><a href="Default.aspx"></a></h6>
-     <a>
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-         <a href="../Default.aspx">INICIO</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-         <a href="../about.html">ACERCA DE</a>&nbsp;&nbsp;&nbsp;&nbsp;
+     <p align="center">
+         <a href="../Default.aspx">INICIO</a>
+         <a> | </a>
+         <a href="../about.html">ACERCA DE</a>
+         <a> | </a>
          <a class="active" href="../Contact.aspx">CONTÁCTENOS</a>
-       </a>
+       </p>
         <p>Unidad Deportiva Online © 2012</p>
-
-
-      
-
-
-
      </div><!-- foot_cen end -->
     </div>
     </form>
-
-    
-
-
 </body>
 </html>

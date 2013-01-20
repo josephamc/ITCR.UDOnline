@@ -14,9 +14,9 @@ using System;
 using System.Data;
 using System.Data.SqlTypes;
 using System.Data.SqlClient;
-using ITCR.UDSystem.Base;
+using ITCR.UDOnline.Base;
 
-namespace ITCR.UDSystem.Datos
+namespace ITCR.UDOnline.Datos
 {
 	/// <summary>
 	/// Propósito: Clase de acceso a datos derivada para tabla 'UDGDFIMAGEN'.
