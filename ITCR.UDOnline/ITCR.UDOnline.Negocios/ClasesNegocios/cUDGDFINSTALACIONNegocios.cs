@@ -13,11 +13,11 @@ using System;
 using System.Data;
 using System.Data.SqlTypes;
 using System.Data.SqlClient;
-using ITCR.UDSystem.Base;
-using ITCR.UDSystem.Datos;
+using ITCR.UDOnline.Base;
+using ITCR.UDOnline.Datos;
 //using ITCR.UDSystem.Negocios.wsSeguridad;
 
-namespace ITCR.UDSystem.Negocios
+namespace ITCR.UDOnline.Negocios
 {
 	/// <summary>
 	/// Propósito: Clase de lógica de negocios para tabla 'UDGDFINSTALACION'.

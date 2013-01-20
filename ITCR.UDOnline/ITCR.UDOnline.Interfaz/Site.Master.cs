@@ -16,8 +16,7 @@ namespace ITCR.UDOnline.Interfaz
 
         protected void btn_Search_Click(object sender, EventArgs e)
         {
-            
-            Response.Redirect("/Default?from=SEARCH-" + txt_search.Text, true);
+            Response.Redirect("~/Solicitudes/frmMostrarInstalaciones.aspx?from=SEARCH-" + txt_search.Text, true);
         }
 
     }

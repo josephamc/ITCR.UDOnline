@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
-using ITCR.UDSystem.Negocios;
+using ITCR.UDOnline.Negocios;
 
 namespace ITCR.UDOnline.Negocios
 {
@@ -74,7 +74,7 @@ namespace ITCR.UDOnline.Negocios
         
             foreach (DataRow drRow in dtBase.Rows)
             {
-                if (this.Compute(drRow[1].ToString(), p_palabra) <= 2)
+                if (this.Compute(drRow[1].ToString(), p_palabra) <= 7)
                     dtReturn.Rows.Add(drRow[0].ToString(), drRow[1].ToString(), drRow[2].ToString());
             }
 

@@ -10,23 +10,27 @@ li											{list-style:none}
 #head										{width:100%; float:left; background:url(../images/headBg.png) repeat-x}
 .head_height								{height:478px}
 .head_pad									{padding-bottom:30px}
-#head_cen									{width:800px; margin:0 auto}
-#head_sup									{width:800px; float:left; position:relative}
-#head p.search								{width:auto; margin-top:12px; float:right; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; font-size:11px; color:#999999; line-height:25px; letter-spacing:1px}
+#head_cen									{width:900px; margin:0 auto}
+#head_sup									{width:900px; float:left; position:relative} /* width:800px */
+#head p.search								{width:300px; margin-top:12px; float:right; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; font-size:11px; color:#999999; line-height:25px; letter-spacing:1px}
 #head p.search label						{width:auto; margin-right:10px; float:left}
-#head p.search input.txt					{width:135px; height:21px; margin-right:7px; float:left; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; font-size:12px; color:#2c2d2c; border:0; background:url(../images/searchbg.png) no-repeat}
+#head p.search input.txt					{border-style: none;
+    border-color: inherit;
+    border-width: 0;
+    margin-right:7px; float:left; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; font-size:12px; color:#f0f0f0; background:url(../images/searchbg.png) no-repeat
+}
 #head p.search input.btn					{width:68px; height:21px; float:left; border:0; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; font-size:11px; color:#999999; text-align:center; cursor:pointer; background:url(../images/searchbtn.png) no-repeat}
 #head p.search input.btn:active				{background-position:2px 2px}
 h1.logo										{width:327px; height:84px; margin-top:112px; float:left; background:url(../images/tec-logo.png) no-repeat; top: -17px;  left: -1px;}
 h1.logo a									{width:100%; height:100%; float:left; text-indent:-9999px}
-#head gl									{width:396px; height:44px; margin-top:58px; float:right}
-#head gl li									{width:auto; margin-left:1px; float:left; font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#5f5f5f; line-height:35px; text-transform:uppercase}
-#head gl li:first-child						{margin:0}
-#head gl li	a,#head ul li a.active			{width:auto; height:42px; padding:0 23px; float:left; color:inherit; background:#F4F4F4}
-#head gl li	a:hover,#head ul li a.active	{color:#31a1ff; background:#606060}
+#head ol									{width:520px; height:44px; margin-top:58px; float:right} /*width:396*/
+#head ol li									{width:auto; margin-left:1px; float:left; font-family:Arial, Helvetica, sans-serif; font-size:13px; color:#5f5f5f; line-height:35px; text-transform:uppercase}
+#head ol li:first-child						{margin:0}
+#head ol li	a,#head ul li a.active			{width:auto; height:42px; padding:0 23px; float:left; color:inherit; background:#F4F4F4}
+#head ol li	a:hover,#head ul li a.active	{color:#31a1ff; background:#606060}
 img.ban_bg									{width:auto; float:left; position:absolute; top:139px; left:-24px}
 
-#ct_pan										{width:94%; height:120px; margin-top:9px; float:left; position:relative; font-family:Tahoma, Geneva, sans-serif; font-size:12px; color:#999999; line-height:16px; background:#3b3b3b; top: -4px; left: 24px;}
+#ct_pan										{width:96.5%; height:120px; margin-top:9px; float:left; position:relative; font-family:Tahoma, Geneva, sans-serif; font-size:12px; color:#999999; line-height:16px; background:#3b3b3b; top: -4px; left: 24px;}/*width:94%*/
 #ct_pan p									{width:254px; margin:11px 52px 0 34px; float:left }
 #ct_pan p a									{color:#31a1ff; text-transform:uppercase}
 #ct_pan ul									{width:195px; margin-top:26px; float:left}
@@ -397,7 +401,11 @@ ul.slideshow li.show {
   z-index: 500;}
  
 ul img {
-  border: none;}
+  border-style: none;
+    border-color: inherit;
+    border-width: medium;
+    width: 753px;
+}
  
 #slideshow-caption {
   width: 680px;

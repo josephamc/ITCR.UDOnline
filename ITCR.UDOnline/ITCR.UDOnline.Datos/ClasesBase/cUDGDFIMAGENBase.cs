@@ -16,7 +16,7 @@ using System.Data.SqlTypes;
 using System.Data.SqlClient;
 //using Microsoft.SqlServer.Types;  //usarlo cuando hay tipos Geometry, Geography, HierarchiId. Está en C:\Program Files\Microsoft SQL Server\100\SDK\Assemblies\Microsoft.SqlServer.Types.dll
 
-namespace ITCR.UDSystem.Base
+namespace ITCR.UDOnline.Base
 {
 	/// <summary>
 	/// Propósito: Clase de acceso a datos para tabla 'UDGDFIMAGEN'.
