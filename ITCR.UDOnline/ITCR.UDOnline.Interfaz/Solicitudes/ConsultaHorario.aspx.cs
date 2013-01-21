@@ -35,6 +35,7 @@ namespace ITCR.UDOnline.Interfaz.Solicitudes
             tablaHorarios = Horario.SeleccionarTodos_Con_FKY_INSTALACION_FK();
 
             tablaHorariosFinal = new DataTable();
+            tablaHorariosFinal.Columns.Add("ident");
             tablaHorariosFinal.Columns.Add("Dia de la Semana");
             tablaHorariosFinal.Columns.Add("Hora Inicio");
             tablaHorariosFinal.Columns.Add("Hora Fin");
@@ -71,6 +72,7 @@ namespace ITCR.UDOnline.Interfaz.Solicitudes
                 }
 
                 DataRow row = tablaHorariosFinal.NewRow();
+                row["ident"] = tablaHorarios.Rows[i][0];
                 row["Dia de la Semana"] = dia;
                 row["Hora Inicio"] = tablaHorarios.Rows[i][1];
                 row["Hora Fin"] = tablaHorarios.Rows[i][2];

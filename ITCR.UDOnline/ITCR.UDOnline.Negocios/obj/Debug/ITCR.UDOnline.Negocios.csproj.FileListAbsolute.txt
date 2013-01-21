@@ -19,3 +19,10 @@ C:\Users\jsaenz\Documents\GitHub\ITCR.UDOnline\ITCR.UDOnline\ITCR.UDOnline.Negoc
 C:\Users\jsaenz\Documents\GitHub\ITCR.UDOnline\ITCR.UDOnline\ITCR.UDOnline.Negocios\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\jsaenz\Documents\GitHub\ITCR.UDOnline\ITCR.UDOnline\ITCR.UDOnline.Negocios\obj\Debug\ITCR.UDOnline.Negocios.dll
 C:\Users\jsaenz\Documents\GitHub\ITCR.UDOnline\ITCR.UDOnline\ITCR.UDOnline.Negocios\obj\Debug\ITCR.UDOnline.Negocios.pdb
+C:\Users\jsaenz\Desktop\resplado 21 enero UDOnline\ITCR.UDOnline\ITCR.UDOnline.Negocios\bin\Debug\ITCR.UDOnline.Negocios.dll
+C:\Users\jsaenz\Desktop\resplado 21 enero UDOnline\ITCR.UDOnline\ITCR.UDOnline.Negocios\bin\Debug\ITCR.UDOnline.Negocios.pdb
+C:\Users\jsaenz\Desktop\resplado 21 enero UDOnline\ITCR.UDOnline\ITCR.UDOnline.Negocios\bin\Debug\ITCR.UDOnline.Datos.dll
+C:\Users\jsaenz\Desktop\resplado 21 enero UDOnline\ITCR.UDOnline\ITCR.UDOnline.Negocios\bin\Debug\ITCR.UDOnline.Datos.pdb
+C:\Users\jsaenz\Desktop\resplado 21 enero UDOnline\ITCR.UDOnline\ITCR.UDOnline.Negocios\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\jsaenz\Desktop\resplado 21 enero UDOnline\ITCR.UDOnline\ITCR.UDOnline.Negocios\obj\Debug\ITCR.UDOnline.Negocios.dll
+C:\Users\jsaenz\Desktop\resplado 21 enero UDOnline\ITCR.UDOnline\ITCR.UDOnline.Negocios\obj\Debug\ITCR.UDOnline.Negocios.pdb
