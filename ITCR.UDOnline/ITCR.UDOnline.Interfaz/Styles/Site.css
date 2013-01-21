@@ -2,7 +2,9 @@
 /* Site.master components */
 html{background:#F0F0F0}
 body										{margin:0; background:#F0F0F0; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif}
-*											{margin:0; padding:0}
+*											{margin:0; padding:0;
+    text-align: left;
+}
 a											{outline:0; text-decoration:none}
 
 li											{list-style:none}

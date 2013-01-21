@@ -24,6 +24,13 @@
          
         </table>
         <br />
+        <hr />
+        <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Horario de Solicitud</h3>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+        <a id="aaa" runat="server" target="blanc">
+            <img src="../../images/consulta04.png" alt=""/>
+            </a>
+        <br />
         <table>
             <tr>
               
@@ -123,6 +130,7 @@
             </tr>        
         </table>
     </div>
+    <hr />
     <br />
     <table>
             <tr>

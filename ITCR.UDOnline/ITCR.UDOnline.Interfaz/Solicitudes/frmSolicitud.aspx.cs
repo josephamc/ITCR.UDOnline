@@ -19,19 +19,34 @@ namespace ITCR.UDOnline.Interfaz.Solicitudes
     public partial class frmSolicitud : System.Web.UI.Page
     {
         private int iIDInstalacion = -1;
+        private string nominst = "";
+        public int IDInst
+        {
+            get
+            {
+                return iIDInstalacion;
+            }
+        }
+        public string NomInst
+        {
+            get
+            {
+                return nominst;
+            }
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
             try
             {
-
                 iIDInstalacion = int.Parse(Request.QueryString["id"].ToString());
                 cUDGDFINSTALACIONNegocios instalacionBase = new cUDGDFINSTALACIONNegocios(0, "", 0, "");
                 instalacionBase.ID_INSTALACION = iIDInstalacion;
                 DataTable tabla = instalacionBase.SeleccionarUno();
                 txt_nombreInstalacion.Text = instalacionBase.NOM_INSTALACION.ToString();
+                nominst = txt_nombreInstalacion.Text.ToString();
 
-
+                aaa.HRef = "/Solicitudes/ConsultaHorario.aspx?id=" + iIDInstalacion;
             }
             catch (Exception) { }
         }
@@ -188,6 +203,7 @@ namespace ITCR.UDOnline.Interfaz.Solicitudes
             ValidaRazonUso.Visible = true;
             InvolucradasValidator.Visible = true;
         }
+
 
     }
 }

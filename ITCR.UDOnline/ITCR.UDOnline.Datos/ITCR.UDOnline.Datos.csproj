@@ -44,6 +44,7 @@
     <Compile Include="ClasesBase\cUDGDFAPROBACIONBase.cs" />
     <Compile Include="ClasesBase\cUDGDFCURSOBase.cs" />
     <Compile Include="ClasesBase\cUDGDFEVENTOBase.cs" />
+    <Compile Include="ClasesBase\cUDGDFHORARIOBase.cs" />
     <Compile Include="ClasesBase\cUDGDFIMAGENBase.cs" />
     <Compile Include="ClasesBase\cUDGDFINSTALACIONBase.cs" />
     <Compile Include="ClasesBase\cUDGDFSOLICITUDBase.cs" />
@@ -51,6 +52,7 @@
     <Compile Include="ClasesDatos\cUDGDFAPROBACIONDatos.cs" />
     <Compile Include="ClasesDatos\cUDGDFCURSODatos.cs" />
     <Compile Include="ClasesDatos\cUDGDFEVENTODatos.cs" />
+    <Compile Include="ClasesDatos\cUDGDFHORARIODatos.cs" />
     <Compile Include="ClasesDatos\cUDGDFIMAGENDatos.cs" />
     <Compile Include="ClasesDatos\cUDGDFINSTALACIONDatos.cs" />
     <Compile Include="ClasesDatos\cUDGDFRESERVACIONDatos.cs" />
