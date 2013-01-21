@@ -24,6 +24,7 @@ namespace ITCR.UDOnline.Interfaz.Solicitudes
                 {
                     enEdicion = IDinstalacionPrevia;
                     cUDGDFINSTALACIONNegocios instalacionBase = new cUDGDFINSTALACIONNegocios(0, "", 0, "");
+                    cUDGDFIMAGENNegocios cImagen = new cUDGDFIMAGENNegocios(0, "", 0, "");
                     instalacionBase.ID_INSTALACION = IDinstalacionPrevia;
                     DataTable tabla = instalacionBase.SeleccionarUno();
 
@@ -41,6 +42,18 @@ namespace ITCR.UDOnline.Interfaz.Solicitudes
                     else
                     {
                         txt_comentarios22.Text = "";
+                    }
+
+                    cImagen.FKY_INSTALACION = IDinstalacionPrevia;
+
+                    try
+                    {
+                        DataRow drImagen = cImagen.SeleccionarTodos_Con_FKY_INSTALACION_FK().Rows[0];
+                        img_VISUALIZACION.Src = "~/frmLOADING.aspx?FileName=" + drImagen[1].ToString();
+                    }
+                    catch (Exception)
+                    {
+                        img_VISUALIZACION.Src = "../images/InsIMG.jpg";
                     }
                 }
                 IDinstalacionPrevia = -1;
