@@ -6,3 +6,4 @@ C:\Users\Joseph\Documents\GitHub\ITCR.UDOnline\ITCR.UDOnline\ITCR.UDOnline.Datos
 C:\Users\Joseph\Documents\GitHub\ITCR.UDOnline\ITCR.UDOnline\ITCR.UDOnline.Datos\bin\Debug\ITCR.UDOnline.Datos.pdb
 C:\Users\Joseph\Documents\GitHub\ITCR.UDOnline\ITCR.UDOnline\ITCR.UDOnline.Datos\obj\Debug\ITCR.UDOnline.Datos.dll
 C:\Users\Joseph\Documents\GitHub\ITCR.UDOnline\ITCR.UDOnline\ITCR.UDOnline.Datos\obj\Debug\ITCR.UDOnline.Datos.pdb
+C:\Users\CesarLeonardo\Documents\GitHub\ITCR.UDOnline\ITCR.UDOnline\ITCR.UDOnline.Datos\obj\Debug\ITCR.UDOnline.Datos.csprojResolveAssemblyReference.cache

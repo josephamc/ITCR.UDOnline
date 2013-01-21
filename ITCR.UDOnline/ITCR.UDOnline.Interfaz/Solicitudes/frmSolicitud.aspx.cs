@@ -30,6 +30,8 @@ namespace ITCR.UDOnline.Interfaz.Solicitudes
                 instalacionBase.ID_INSTALACION = iIDInstalacion;
                 DataTable tabla = instalacionBase.SeleccionarUno();
                 txt_nombreInstalacion.Text = instalacionBase.NOM_INSTALACION.ToString();
+                txt_FechaInicio.Text = DateTime.Now.ToShortDateString();
+                txt_FechaFin.Text = DateTime.Now.ToShortDateString();
 
 
             }
