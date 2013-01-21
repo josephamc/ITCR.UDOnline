@@ -20,7 +20,7 @@
     <br />
     <div id="imglogo">
          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-         <img src="../images/InsIMG.jpg" alt=""/>
+         <img src="../images/InsIMG.jpg" alt="" id="img_VISUALIZACION" runat="server" width="894" height="234"/>
     </div>
     <br />
     <div>

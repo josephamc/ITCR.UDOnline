@@ -6,8 +6,12 @@ C:\Users\Joseph\Documents\GitHub\ITCR.UDOnline\ITCR.UDOnline\ITCR.UDOnline.Datos
 C:\Users\Joseph\Documents\GitHub\ITCR.UDOnline\ITCR.UDOnline\ITCR.UDOnline.Datos\bin\Debug\ITCR.UDOnline.Datos.pdb
 C:\Users\Joseph\Documents\GitHub\ITCR.UDOnline\ITCR.UDOnline\ITCR.UDOnline.Datos\obj\Debug\ITCR.UDOnline.Datos.dll
 C:\Users\Joseph\Documents\GitHub\ITCR.UDOnline\ITCR.UDOnline\ITCR.UDOnline.Datos\obj\Debug\ITCR.UDOnline.Datos.pdb
+<<<<<<< HEAD
 C:\Users\jsaenz\Documents\GitHub\ITCR.UDOnline\ITCR.UDOnline\ITCR.UDOnline.Datos\bin\Debug\ITCR.UDOnline.Datos.dll
 C:\Users\jsaenz\Documents\GitHub\ITCR.UDOnline\ITCR.UDOnline\ITCR.UDOnline.Datos\bin\Debug\ITCR.UDOnline.Datos.pdb
 C:\Users\jsaenz\Documents\GitHub\ITCR.UDOnline\ITCR.UDOnline\ITCR.UDOnline.Datos\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\jsaenz\Documents\GitHub\ITCR.UDOnline\ITCR.UDOnline\ITCR.UDOnline.Datos\obj\Debug\ITCR.UDOnline.Datos.dll
 C:\Users\jsaenz\Documents\GitHub\ITCR.UDOnline\ITCR.UDOnline\ITCR.UDOnline.Datos\obj\Debug\ITCR.UDOnline.Datos.pdb
+=======
+C:\Users\CesarLeonardo\Documents\GitHub\ITCR.UDOnline\ITCR.UDOnline\ITCR.UDOnline.Datos\obj\Debug\ITCR.UDOnline.Datos.csprojResolveAssemblyReference.cache
+>>>>>>> 0926acf12df52543be86a8f3a8064e4d80292e17

@@ -73,6 +73,7 @@
     <Content Include="frmErrorEmail.aspx" />
     <Content Include="frmErrorFechas.aspx" />
     <Content Include="frmError.aspx" />
+    <Content Include="frmLOADING.aspx" />
     <Content Include="frmNotificacion.aspx" />
     <Content Include="images\bannerHead.png" />
     <Content Include="images\consulta04.png" />
@@ -186,6 +187,13 @@
     </Compile>
     <Compile Include="frmError.aspx.designer.cs">
       <DependentUpon>frmError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmLOADING.aspx.cs">
+      <DependentUpon>frmLOADING.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmLOADING.aspx.designer.cs">
+      <DependentUpon>frmLOADING.aspx</DependentUpon>
     </Compile>
     <Compile Include="frmNotificacion.aspx.cs">
       <DependentUpon>frmNotificacion.aspx</DependentUpon>

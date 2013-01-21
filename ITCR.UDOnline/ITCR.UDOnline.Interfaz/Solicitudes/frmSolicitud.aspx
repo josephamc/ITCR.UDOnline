@@ -49,10 +49,10 @@
                            </ajaxToolkit:ToolkitScriptManager>
                             <ajaxToolkit:CalendarExtender 
                           ID="caldExtender" TargetControlID="txt_FechaInicio" PopupButtonID="imgCalendar" 
-                                    runat="server" Format="yyyy-MM-dd">
+                                    runat="server" Format="dd/MM/yyyy">
                            </ajaxToolkit:CalendarExtender>
                                 <img id="imgCalendar" alt="" src="../images/date.png" />
-                                 <asp:RegularExpressionValidator ID="DateValidator1" runat="server" ControlToValidate="txt_FechaInicio"  ErrorMessage="Fecha inválida. Ingrese la fecha en un formato adecuado, ejemplo: 2012-12-31" ValidationExpression="((19|20)\d\d)[-](0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])" EnableClientScript="False" ForeColor="Red"></asp:RegularExpressionValidator>
+                                 <asp:RegularExpressionValidator ID="DateValidator1" runat="server" ControlToValidate="txt_FechaInicio"  ErrorMessage="Fecha inválida. Ingrese la fecha en un formato adecuado, ejemplo 31/12/2012" ValidationExpression="^(?:(?:0?[1-9]|1\d|2[0-8])(\/|-)(?:0?[1-9]|1[0-2]))(\/|-)(?:[1-9]\d\d\d|\d[1-9]\d\d|\d\d[1-9]\d|\d\d\d[1-9])$|^(?:(?:31(\/|-)(?:0?[13578]|1[02]))|(?:(?:29|30)(\/|-)(?:0?[1,3-9]|1[0-2])))(\/|-)(?:[1-9]\d\d\d|\d[1-9]\d\d|\d\d[1-9]\d|\d\d\d[1-9])$|^(29(\/|-)0?2)(\/|-)(?:(?:0[48]00|[13579][26]00|[2468][048]00)|(?:\d\d)?(?:0[48]|[2468][048]|[13579][26]))$" EnableClientScript="False" ForeColor="Red"></asp:RegularExpressionValidator>
                         </td>
                     </tr>
             
@@ -66,10 +66,10 @@
                             <td>
 
                              <ajaxToolkit:CalendarExtender ID="CalendarExtender1" TargetControlID="txt_FechaFin" PopupButtonID="imgCalendar2" 
-                                    runat="server" Format="yyyy-MM-dd">
+                                    runat="server" Format="dd/MM/yyyy">
                              </ajaxToolkit:CalendarExtender>
                               <img id="imgCalendar2"  alt="" src="../images/date.png" />
-                              <asp:RegularExpressionValidator ID="DateValidator2" runat="server" ControlToValidate="txt_FechaFin"  ErrorMessage="Fecha inválida. Ingrese la fecha en un formato adecuado, ejemplo: 2012-12-31" ValidationExpression="((19|20)\d\d)[-](0[1-9]|1[012])[-](0[1-9]|[12][0-9]|3[01])" EnableClientScript="False" ForeColor="Red"></asp:RegularExpressionValidator>
+                              <asp:RegularExpressionValidator ID="DateValidator2" runat="server" ControlToValidate="txt_FechaFin"  ErrorMessage="Fecha inválida. Ingrese la fecha en un formato adecuado, ejemplo: 31/12/2012" ValidationExpression="^(?:(?:0?[1-9]|1\d|2[0-8])(\/|-)(?:0?[1-9]|1[0-2]))(\/|-)(?:[1-9]\d\d\d|\d[1-9]\d\d|\d\d[1-9]\d|\d\d\d[1-9])$|^(?:(?:31(\/|-)(?:0?[13578]|1[02]))|(?:(?:29|30)(\/|-)(?:0?[1,3-9]|1[0-2])))(\/|-)(?:[1-9]\d\d\d|\d[1-9]\d\d|\d\d[1-9]\d|\d\d\d[1-9])$|^(29(\/|-)0?2)(\/|-)(?:(?:0[48]00|[13579][26]00|[2468][048]00)|(?:\d\d)?(?:0[48]|[2468][048]|[13579][26]))$" EnableClientScript="False" ForeColor="Red"></asp:RegularExpressionValidator>
 
                         </td>
                     </tr>
@@ -78,7 +78,7 @@
                 <div>
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <asp:Label ID="Label3" runat="server" 
-                        Text="Formato de Fecha yyyy-MM-dd , ejemplo: 2012-12-31" 
+                        Text="Formato de Fecha dd/MM/yyyy , ejemplo: 31/12/2012" 
                         style="font-style: italic"></asp:Label>
                     
                     </div>
@@ -95,10 +95,9 @@
                     <td><asp:DropDownList ID="ddlAmPm1" runat="server">
                        <asp:ListItem Selected="True">AM</asp:ListItem>
                        <asp:ListItem Selected="False">PM</asp:ListItem>
-                       <asp:ListItem Selected="False">MD</asp:ListItem>
-                    </asp:DropDownList></td>
+                                    </asp:DropDownList></td>
                     <td><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txt_Inicio" ErrorMessage="*"></asp:RequiredFieldValidator></td>
-                    <td><asp:RegularExpressionValidator ID="TimeValidator1" runat="server" ControlToValidate="txt_Inicio"  ErrorMessage="Hora inválida. Ingrese la hora en un formato adecuado, ejemplo: 12:30 o 5:00" ValidationExpression="^(1[0-2]|[1-9]):[0-5][0-9]$" EnableClientScript="False" ForeColor="Red"></asp:RegularExpressionValidator>
+                    <td><asp:RegularExpressionValidator ID="TimeValidator1" runat="server" ControlToValidate="txt_Inicio"  ErrorMessage="Hora inválida. Ingrese la hora en un formato adecuado, ejemplo: 12:30 o 5:00" ValidationExpression="^(0[1-9]|1\d|2[0-3]):([0-5]\d)(:([0-5]\d))?$" EnableClientScript="False" ForeColor="Red"></asp:RegularExpressionValidator>
                         </td>
                     <td>&nbsp;</td>
                 </tr>
@@ -111,10 +110,9 @@
                     <td><asp:DropDownList ID="ddlAmPm2" runat="server">
                        <asp:ListItem Selected="True">AM</asp:ListItem>
                        <asp:ListItem Selected="False">PM</asp:ListItem>
-                       <asp:ListItem Selected="False">MD</asp:ListItem>
-                    </asp:DropDownList></td>
+                        </asp:DropDownList></td>
                     <td><asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txt_Fin" ErrorMessage="*"></asp:RequiredFieldValidator></td>
-                    <td><asp:RegularExpressionValidator ID="TimeValidator2" runat="server" ControlToValidate="txt_Fin"  ErrorMessage="Hora inválida. Ingrese la hora en un formato adecuado, ejemplo: 12:30 o 5:00" ValidationExpression="^(1[0-2]|[1-9]):[0-5][0-9]$" EnableClientScript="False" ForeColor="Red"></asp:RegularExpressionValidator>
+                    <td><asp:RegularExpressionValidator ID="TimeValidator2" runat="server" ControlToValidate="txt_Fin"  ErrorMessage="Hora inválida. Ingrese la hora en un formato adecuado, ejemplo: 12:30 o 5:00" ValidationExpression="^(0[1-9]|1\d|2[0-3]):([0-5]\d)(:([0-5]\d))?$" EnableClientScript="False" ForeColor="Red"></asp:RegularExpressionValidator>
                         </td>
                 </tr>  
                 </table>
